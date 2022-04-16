@@ -2,11 +2,8 @@
 
 A new Flutter project.
 
-<<<<<<< HEAD
 1 - retirada comentarios
-=======
 2- comentario main.
->>>>>>> main
 
 ## Getting Started
 
