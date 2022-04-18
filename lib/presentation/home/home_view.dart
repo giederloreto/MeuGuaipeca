@@ -16,6 +16,8 @@ class _HomeViewState extends State<HomeView> {
         color: Colors.amber,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(
               label: 'Feed',
