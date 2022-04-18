@@ -13,7 +13,7 @@ class MeuGuaipeca extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeView(),
+      home: const HomeView(),
     );
   }
 }
