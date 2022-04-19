@@ -14,18 +14,28 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       body: Container(
         color: Colors.amber,
+        child: Center(
+          child: Text(
+            'Teste com fonte nova.',
+            style: TextStyle(
+              fontSize: 30,
+              fontFamily: 'Quicksand',
+            ),
+          ),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        // showSelectedLabels: false,
+        // showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(
-              label: 'Feed',
-              icon: IconButton(
-                icon: const Icon(GuaipecaIcon.newspaper),
-                color: Colors.black,
-                onPressed: () {},
-              )),
+            label: 'Feed',
+            icon: IconButton(
+              icon: const Icon(GuaipecaIcon.newspaper),
+              color: Colors.black,
+              onPressed: () {},
+            ),
+          ),
           BottomNavigationBarItem(
               label: 'Meus Pets',
               icon: IconButton(
