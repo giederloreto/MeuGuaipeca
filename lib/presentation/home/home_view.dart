@@ -16,7 +16,7 @@ class _HomeViewState extends State<HomeView> {
         color: Colors.amber,
         child: Center(
           child: Text(
-            'Teste com fonte nova.',
+            'Teste com fonte nova',
             style: TextStyle(
               fontSize: 30,
               fontFamily: 'Quicksand',
@@ -24,40 +24,48 @@ class _HomeViewState extends State<HomeView> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        // showSelectedLabels: false,
-        // showUnselectedLabels: false,
-        items: [
-          BottomNavigationBarItem(
-            label: 'Feed',
-            icon: IconButton(
-              icon: const Icon(GuaipecaIcon.newspaper),
-              color: Colors.black,
-              onPressed: () {},
-            ),
-          ),
-          BottomNavigationBarItem(
-              label: 'Meus Pets',
-              icon: IconButton(
-                icon: const Icon(GuaipecaIcon.dog),
-                color: Colors.black,
-                onPressed: () {},
-              )),
-          BottomNavigationBarItem(
-            label: 'Adoção',
-            icon: IconButton(
-              icon: const Icon(GuaipecaIcon.baby_carriage),
-              color: Colors.black,
-              onPressed: () {},
-            ),
-          ),
-          BottomNavigationBarItem(
-            label: 'Loja',
-            icon: IconButton(
-              icon: const Icon(GuaipecaIcon.shop),
-              color: Colors.black,
-              onPressed: () {},
-            ),
+      bottomNavigationBar: Stack(
+        children: [
+          BottomNavigationBar(
+            // showSelectedLabels: false,
+            // showUnselectedLabels: false,
+            iconSize: 5,
+            items: [
+              BottomNavigationBarItem(
+                label: 'Feed',
+                icon: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 6),
+                  child: const Icon(GuaipecaIcon.newspaper),
+                ),
+              ),
+              BottomNavigationBarItem(
+                icon: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 6.0),
+                  child: IconButton(
+                    icon: const Icon(GuaipecaIcon.dog),
+                    color: Colors.black,
+                    onPressed: () {},
+                  ),
+                ),
+                label: 'Meus Pet',
+              ),
+              BottomNavigationBarItem(
+                label: 'Adoção',
+                icon: IconButton(
+                  icon: const Icon(GuaipecaIcon.baby_carriage),
+                  color: Colors.black,
+                  onPressed: () {},
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: 'Loja',
+                icon: IconButton(
+                  icon: const Icon(GuaipecaIcon.shop),
+                  color: Colors.black,
+                  onPressed: () {},
+                ),
+              ),
+            ],
           ),
         ],
       ),
