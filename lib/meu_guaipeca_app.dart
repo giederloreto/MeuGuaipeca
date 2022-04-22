@@ -11,7 +11,9 @@ class MeuGuaipeca extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Meu Guaipeca',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        brightness: Brightness.light,
+        primaryColor: Colors.red,
+        backgroundColor: Colors.green,
       ),
       home: const HomeView(),
     );
