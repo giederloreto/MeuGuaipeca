@@ -14,6 +14,12 @@ class MeuGuaipeca extends StatelessWidget {
         brightness: Brightness.light,
         primaryColor: Colors.red,
         backgroundColor: Colors.green,
+        /* CoresProjeto{
+          F8E214,
+          716D75,
+          F79814,
+          0A58F7,
+        }, */
       ),
       home: const HomeView(),
     );

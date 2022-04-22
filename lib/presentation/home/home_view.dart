@@ -10,23 +10,27 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  List feed = ['Gieder', 'Ariadne'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      body: Container(
-        color: Colors.amber,
-        child: const Center(
-          child: Text(
-            'Teste com fonte nova',
-            style: TextStyle(
-              fontSize: 30,
-              fontFamily: 'Quicksand',
+      body: ListView.builder(
+        itemCount: feed.length,
+        itemBuilder: (context, index) {
+          return const Card(
+            child: ListTile(
+              title: Text(
+                'Titulo',
+              ),
+              subtitle: Text('Subtitulo'),
+              leading: Icon(Icons.pets),
             ),
-          ),
-        ),
+          );
+        },
       ),
-      bottomNavigationBar: GuaipecaBottomBar(),
+      bottomNavigationBar: const GuaipecaBottomBar(),
     );
   }
 }
