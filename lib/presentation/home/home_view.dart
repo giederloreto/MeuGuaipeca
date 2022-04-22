@@ -10,7 +10,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  List feed = ['Gieder', 'Ariadne'];
+  List feed = ['Gieder', 'Ariadne', 'Oliver', 'Olavo'];
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +23,17 @@ class _HomeViewState extends State<HomeView> {
         child: ListView.builder(
           itemCount: feed.length,
           itemBuilder: (context, index) {
-            return const Card(
+            return Card(
               child: ListTile(
                 title: Text(
-                  'Titulo',
+                  feed[2],
                 ),
-                subtitle: Text('Subtitulo'),
-                leading: Icon(Icons.pets),
+                subtitle: Text('O cão devolvido'),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      'https://blog.petiko.com.br/wp-content/uploads/2018/10/01.png'),
+                ),
+                trailing: Text('trailing'),
               ),
             );
           },
