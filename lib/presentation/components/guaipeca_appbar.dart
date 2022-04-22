@@ -27,8 +27,12 @@ class _GuaipecaAppBarState extends State<GuaipecaAppBar> {
           elevation: 0,
           // ignore: prefer_const_literals_to_create_immutables
           actions: [
-            const CircleAvatar(
-              child: Icon(Icons.person),
+            CircleAvatar(
+              child: const Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
+              backgroundColor: Colors.grey,
               maxRadius: 30,
             ),
           ],
