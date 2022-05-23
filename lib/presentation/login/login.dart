@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:meu_guaipeca/presentation/components/image_text_button.dart';
 import 'package:meu_guaipeca/settings/strings.dart';
 
@@ -15,7 +16,7 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.white,
       body: Center(
         child: ListView(
           children: [
@@ -25,40 +26,44 @@ class _LoginViewState extends State<LoginView> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: 200,
-                    width: 300,
-                    child: Image.asset(
-                      'assets/images/logo05.png',
-                    ),
+                  Image.asset(
+                    'assets/images/logo.png',
+                    height: MediaQuery.of(context).size.height * 0.35,
+                    width: MediaQuery.of(context).size.width * 0.1,
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.08,
+                    height: MediaQuery.of(context).size.height * 0.01,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(8),
+                      contentPadding: const EdgeInsets.all(8),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                         Icons.mail,
                         color: Colors.black,
                       ),
-                      hintText: Strings.strings.strEmail,
+                      label: Text(
+                        Strings.strings.strEmail,
+                        style: const TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
+                    height: MediaQuery.of(context).size.height * 0.03,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.text,
                     obscureText: !_isVisible,
                     decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(8),
+                      contentPadding: const EdgeInsets.all(8),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -80,38 +85,76 @@ class _LoginViewState extends State<LoginView> {
                                   Icons.visibility_off,
                                   color: Colors.black,
                                 )),
-                      hintText: Strings.strings.senha,
+                      label: Text(
+                        Strings.strings.senha,
+                        style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.05,
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Colors.white),
-                    onPressed: () {},
-                    child: Text(
-                      Strings.strings.login,
-                      style: const TextStyle(color: Colors.black),
+                  SizedBox(
+                    height: 50,
+                    child: Card(
+                      elevation: 8,
+                      clipBehavior: Clip.hardEdge,
+                      child: InkWell(
+                        onTap: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SizedBox(height: 16),
+                            Text(
+                              Strings.strings.login,
+                              style: const TextStyle(
+                                  fontFamily: 'Quicksand',
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(height: 16),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.05,
+                  ),
                   const Divider(
-                    color: Colors.white,
-                    indent: 30,
-                    endIndent: 30,
+                    thickness: 2,
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.05,
                   ),
                   ImageTextButton(
                     onPressed: () {},
                     imageHeight: 100,
-                    text: Text(Strings.strings.loginWithGoogle),
+                    text: Text(
+                      Strings.strings.loginWithGoogle,
+                      style: const TextStyle(
+                          fontFamily: 'Quicksand',
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
                     path: 'assets/images/google.png',
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.1,
+                    height: MediaQuery.of(context).size.height * 0.005,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(Strings.strings.dontHaveAccount),
+                      Text(
+                        Strings.strings.dontHaveAccount,
+                        style: const TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold),
+                      ),
                       TextButton(
                         onPressed: () {},
                         child: Text(Strings.strings.subscribe),

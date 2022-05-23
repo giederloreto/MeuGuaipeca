@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class Strings {
   String strEmail;
   String senha;
@@ -9,7 +11,7 @@ class Strings {
     this.strEmail = 'E-mail',
     this.senha = 'Senha',
     this.login = 'Login',
-    this.loginWithGoogle = 'Login com Google',
+    this.loginWithGoogle = 'Entrar com Google',
     this.dontHaveAccount = 'Ainda não tem conta?',
     this.subscribe = 'Inscreva-se',
   });
