@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meu_guaipeca/presentation/home/home_view.dart';
 import 'package:meu_guaipeca/presentation/login/login.dart';
 
 class MeuGuaipeca extends StatelessWidget {
@@ -21,7 +22,7 @@ class MeuGuaipeca extends StatelessWidget {
           0A58F7,
         }, */
       ),
-      home: LoginView(),
+      home: HomeView(),
     );
   }
 }

@@ -36,6 +36,10 @@ class _GuaipecaBottomBarState extends State<GuaipecaBottomBar> {
           icon: Icon(GuaipecaIcon.shop),
           label: 'Loja',
         ),
+        const BottomNavigationBarItem(
+          icon: Icon(GuaipecaIcon.user),
+          label: 'Perfil',
+        ),
       ],
       onTap: (index) {
         setState(() {

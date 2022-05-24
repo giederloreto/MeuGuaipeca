@@ -48,4 +48,6 @@ class GuaipecaIcon {
   // ignore: constant_identifier_names
   static const IconData baby_carriage =
       IconData(0xf77d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData user =
+      IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
