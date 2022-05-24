@@ -13,31 +13,50 @@ class _GuaipecaBottomBarState extends State<GuaipecaBottomBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      selectedItemColor: Colors.yellow[700],
+      selectedLabelStyle: TextStyle(
+          fontFamily: 'Quicksand', fontSize: 14, fontWeight: FontWeight.bold),
+      selectedItemColor: Colors.orange,
+      selectedFontSize: 30,
+      backgroundColor: Colors.white,
       elevation: 5,
-      iconSize: MediaQuery.of(context).size.width * 0.08,
+      iconSize: MediaQuery.of(context).size.width * 0.07,
       currentIndex: _indexBottom,
       type: BottomNavigationBarType.fixed,
       // ignore: prefer_const_literals_to_create_immutables
       items: [
         const BottomNavigationBarItem(
-          icon: Icon(GuaipecaIcon.newspaper),
+          icon: Icon(
+            GuaipecaIcon.newspaper,
+            color: Colors.black,
+          ),
           label: 'Feed',
         ),
         const BottomNavigationBarItem(
-          icon: Icon(GuaipecaIcon.dog),
+          icon: Icon(
+            GuaipecaIcon.dog,
+            color: Colors.black,
+          ),
           label: 'Meus Pets',
         ),
         const BottomNavigationBarItem(
-          icon: Icon(GuaipecaIcon.baby_carriage),
+          icon: Icon(
+            GuaipecaIcon.baby_carriage,
+            color: Colors.black,
+          ),
           label: 'Adoção',
         ),
         const BottomNavigationBarItem(
-          icon: Icon(GuaipecaIcon.shop),
+          icon: Icon(
+            GuaipecaIcon.shop,
+            color: Colors.black,
+          ),
           label: 'Loja',
         ),
         const BottomNavigationBarItem(
-          icon: Icon(GuaipecaIcon.user),
+          icon: Icon(
+            GuaipecaIcon.user,
+            color: Colors.black,
+          ),
           label: 'Perfil',
         ),
       ],
