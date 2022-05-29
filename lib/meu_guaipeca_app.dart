@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/presentation/home/home_view.dart';
 import 'package:meu_guaipeca/presentation/login/login.dart';
+import 'package:meu_guaipeca/presentation/registration/register_view.dart';
 
 class MeuGuaipeca extends StatelessWidget {
   const MeuGuaipeca({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class MeuGuaipeca extends StatelessWidget {
           0A58F7,
         }, */
       ),
-      home: HomeView(),
+      home: RegisterView(),
     );
   }
 }

@@ -27,9 +27,9 @@ class _LoginViewState extends State<LoginView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    'assets/images/logo.png',
-                    height: MediaQuery.of(context).size.height * 0.35,
-                    width: MediaQuery.of(context).size.width * 0.1,
+                    'assets/images/logo05.png',
+                    height: MediaQuery.of(context).size.height * 0.30,
+                    width: MediaQuery.of(context).size.width * 0.15,
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.01,
@@ -88,9 +88,10 @@ class _LoginViewState extends State<LoginView> {
                       label: Text(
                         Strings.strings.senha,
                         style: TextStyle(
-                            fontFamily: 'Quicksand',
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
+                          fontFamily: 'Quicksand',
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
