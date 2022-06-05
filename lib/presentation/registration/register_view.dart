@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
+import 'package:meu_guaipeca/presentation/components/guaipeca_separate.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_form_field.dart';
 
 class RegisterView extends StatefulWidget {
@@ -13,33 +14,37 @@ class _RegisterViewState extends State<RegisterView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Center(
           child: Column(
             children: [
-              SizedBox(
+              const GuaipecaSeparate(
                 height: 50,
               ),
               CircleAvatar(),
-              SizedBox(
+              const GuaipecaSeparate(
                 height: 50,
               ),
               GuaipecaTextFormField(label: 'Nome'),
-              SizedBox(
-                height: 50,
+              const GuaipecaSeparate(
+                height: 20,
               ),
               GuaipecaTextFormField(label: 'E-mail'),
-              SizedBox(
-                height: 50,
+              const GuaipecaSeparate(
+                height: 20,
               ),
               GuaipecaTextFormField(label: 'CPF'),
-              SizedBox(
-                height: 50,
+              const GuaipecaSeparate(
+                height: 20,
               ),
               GuaipecaTextFormField(label: 'Senha'),
-              SizedBox(
-                height: 50,
+              const GuaipecaSeparate(
+                height: 20,
+              ),
+              GuaipecaTextFormField(label: 'Confirmar Senha'),
+              const GuaipecaSeparate(
+                height: 20,
               ),
               GuaipecaLargeButton(label: 'Concluir')
             ],
