@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "232830095440",
+    "project_id": "meuguaipeca",
+    "storage_bucket": "meuguaipeca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232830095440:android:5ecddd093b56068cab0155",
+        "android_client_info": {
+          "package_name": "com.example.meu_guaipeca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232830095440-rk1o556d0d8t2l5e1ir2ap5nqrjd7e76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRSmUxNpsCnWakt16IWlyOC8PKq44MqIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232830095440-rk1o556d0d8t2l5e1ir2ap5nqrjd7e76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
