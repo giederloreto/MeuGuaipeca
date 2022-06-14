@@ -11,6 +11,8 @@ class RegisterView extends StatefulWidget {
 }
 
 class _RegisterViewState extends State<RegisterView> {
+  bool isCnpj = false;
+  String cpfOrCnpj = 'cpf';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,20 @@ class _RegisterViewState extends State<RegisterView> {
               const GuaipecaSeparate(
                 height: 50,
               ),
-              CircleAvatar(),
+              Text(
+                'Cadastro',
+                style: TextStyle(
+                    fontFamily: 'Quicksand',
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
+              ),
+              Switch(
+                  value: isCnpj,
+                  onChanged: (value) {
+                    setState(() {
+                      isCnpj = !isCnpj;
+                    });
+                  }),
               const GuaipecaSeparate(
                 height: 50,
               ),
@@ -34,7 +49,10 @@ class _RegisterViewState extends State<RegisterView> {
               const GuaipecaSeparate(
                 height: 20,
               ),
-              GuaipecaTextFormField(label: 'CPF'),
+              if (isCnpj != false)
+                GuaipecaTextFormField(label: 'CNPJ')
+              else
+                GuaipecaTextFormField(label: 'CPF'),
               const GuaipecaSeparate(
                 height: 20,
               ),
