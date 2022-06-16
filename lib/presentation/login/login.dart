@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:meu_guaipeca/presentation/components/image_text_button.dart';
-import 'package:meu_guaipeca/settings/strings.dart';
+import 'package:meu_guaipeca/settings/Strings/strings.dart';
 
 class LoginView extends StatefulWidget {
   LoginView({Key? key}) : super(key: key);

@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-class GuaipecaLargeButton extends StatefulWidget {
-  String label;
-  GuaipecaLargeButton({required this.label, Key? key}) : super(key: key);
+class GuaipecaLargeButton extends StatelessWidget {
+  final String label;
+  final Function()? onTap;
+  const GuaipecaLargeButton({required this.label, this.onTap, Key? key})
+      : super(key: key);
 
-  @override
-  State<GuaipecaLargeButton> createState() => _GuaipecaLargeButtonState();
-}
-
-class _GuaipecaLargeButtonState extends State<GuaipecaLargeButton> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -17,13 +14,13 @@ class _GuaipecaLargeButtonState extends State<GuaipecaLargeButton> {
         elevation: 8,
         clipBehavior: Clip.hardEdge,
         child: InkWell(
-          onTap: () {},
+          onTap: onTap,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 16),
               Text(
-                widget.label,
+                label,
                 style: const TextStyle(
                     fontFamily: 'Quicksand',
                     fontSize: 18,
