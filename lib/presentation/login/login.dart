@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:meu_guaipeca/presentation/components/image_text_button.dart';
 import 'package:meu_guaipeca/settings/Strings/strings.dart';
+import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 class LoginView extends StatefulWidget {
   LoginView({Key? key}) : super(key: key);
@@ -159,7 +160,10 @@ class _LoginViewState extends State<LoginView> {
                                 fontWeight: FontWeight.bold),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, RoutesNames.REGISTERCHOOSE);
+                            },
                             child: Text(Strings.strings.subscribe),
                           ),
                         ],

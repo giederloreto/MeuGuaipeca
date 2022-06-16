@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_separate.dart';
+import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 class RegisterChooseView extends StatefulWidget {
   RegisterChooseView({Key? key}) : super(key: key);
@@ -29,9 +30,19 @@ class _RegisterChooseViewState extends State<RegisterChooseView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GuaipecaLargeButton(label: 'Pessoa Fisica'),
+            GuaipecaLargeButton(
+              label: 'Pessoa Fisica',
+              onTap: () {
+                Navigator.pushNamed(context, RoutesNames.REGISTERCPF);
+              },
+            ),
             GuaipecaSeparate(height: 50),
-            GuaipecaLargeButton(label: 'Associações')
+            GuaipecaLargeButton(
+              label: 'Associações',
+              onTap: () {
+                Navigator.pushNamed(context, RoutesNames.REGISTERCNPJ);
+              },
+            )
           ],
         ),
       ),
