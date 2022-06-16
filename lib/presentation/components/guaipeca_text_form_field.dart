@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class GuaipecaTextFormField extends StatefulWidget {
-  String label;
+  final String label;
+  final TextEditingController? controller;
 
-  GuaipecaTextFormField({required this.label, Key? key}) : super(key: key);
+  GuaipecaTextFormField({required this.label, this.controller, Key? key})
+      : super(key: key);
 
   @override
   State<GuaipecaTextFormField> createState() => _GuaipecaTextFormFieldState();
@@ -13,6 +15,7 @@ class _GuaipecaTextFormFieldState extends State<GuaipecaTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.all(8),
         filled: true,
