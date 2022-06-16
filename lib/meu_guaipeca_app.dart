@@ -25,7 +25,7 @@ class MeuGuaipeca extends StatelessWidget {
           0A58F7,
         }, */
       ),
-      home: RegisterChooseView(),
+      home: LoginView(),
     );
   }
 }

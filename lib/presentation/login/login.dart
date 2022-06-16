@@ -146,19 +146,39 @@ class _LoginViewState extends State<LoginView> {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.005,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  Column(
                     children: [
-                      Text(
-                        Strings.strings.dontHaveAccount,
-                        style: const TextStyle(
-                            fontFamily: 'Quicksand',
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            Strings.strings.dontHaveAccount,
+                            style: const TextStyle(
+                                fontFamily: 'Quicksand',
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(Strings.strings.subscribe),
+                          ),
+                        ],
                       ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(Strings.strings.subscribe),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            Strings.strings.forgetPassword,
+                            style: const TextStyle(
+                                fontFamily: 'Quicksand',
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(Strings.strings.resetPassword),
+                          ),
+                        ],
                       ),
                     ],
                   )
