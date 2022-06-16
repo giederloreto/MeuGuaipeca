@@ -3,43 +3,42 @@ import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart'
 import 'package:meu_guaipeca/presentation/components/guaipeca_separate.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_form_field.dart';
 
-class RegisterView extends StatefulWidget {
-  RegisterView({Key? key}) : super(key: key);
+class RegisterCpfView extends StatefulWidget {
+  const RegisterCpfView({Key? key}) : super(key: key);
 
   @override
-  State<RegisterView> createState() => _RegisterViewState();
+  State<RegisterCpfView> createState() => _RegisterCpfViewState();
 }
 
-class _RegisterViewState extends State<RegisterView> {
-  bool isCnpj = false;
-  String cpfOrCnpj = 'cpf';
+class _RegisterCpfViewState extends State<RegisterCpfView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Center(
+          child: Text(
+            'Cadastro',
+            style: TextStyle(
+                fontFamily: 'Quicksand',
+                fontSize: 24,
+                fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Center(
           child: Column(
             children: [
-              const GuaipecaSeparate(
-                height: 50,
-              ),
-              Text(
-                'Cadastro',
+              const Text(
+                'Faça seu cadastro',
                 style: TextStyle(
                     fontFamily: 'Quicksand',
                     fontSize: 24,
                     fontWeight: FontWeight.bold),
               ),
-              Switch(
-                  value: isCnpj,
-                  onChanged: (value) {
-                    setState(() {
-                      isCnpj = !isCnpj;
-                    });
-                  }),
               const GuaipecaSeparate(
-                height: 50,
+                height: 20,
               ),
               GuaipecaTextFormField(label: 'Nome'),
               const GuaipecaSeparate(
@@ -49,10 +48,7 @@ class _RegisterViewState extends State<RegisterView> {
               const GuaipecaSeparate(
                 height: 20,
               ),
-              if (isCnpj != false)
-                GuaipecaTextFormField(label: 'CNPJ')
-              else
-                GuaipecaTextFormField(label: 'CPF'),
+              GuaipecaTextFormField(label: 'CPF'),
               const GuaipecaSeparate(
                 height: 20,
               ),
