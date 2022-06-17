@@ -11,19 +11,45 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
+  final color = const Color(0XFFdbb49f);
+
+  @override
+  void initState() {
+    Future.delayed(Duration(seconds: 4)).then((_) => Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => LoginView())));
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.amber,
-      child: Padding(
-        padding: EdgeInsets.all(24.0),
-        child: Center(
-            child: ElevatedButton(
-          child: Text('next'),
-          onPressed: () {
-            navigator();
-          },
-        )),
+    return Scaffold(
+      body: Container(
+        color: color,
+        child: Padding(
+          padding: EdgeInsets.all(24.0),
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Bem vindo\nao\nMeu Guaipeca',
+                  style: TextStyle(
+                    fontFamily: 'Quicksand',
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  child: Image.asset(
+                    'assets/images/loading.gif',
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

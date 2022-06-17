@@ -38,9 +38,10 @@ class _RegisterCpfViewState extends State<RegisterCpfView> {
                 const Text(
                   'Faça seu cadastro',
                   style: TextStyle(
-                      fontFamily: 'Quicksand',
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold),
+                    fontFamily: 'Quicksand',
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const GuaipecaSeparate(
                   height: 20,
