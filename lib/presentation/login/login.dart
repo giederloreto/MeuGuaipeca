@@ -27,9 +27,13 @@ class _LoginViewState extends State<LoginView> {
             gradient: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
+          stops: [
+            0.4,
+            0.8,
+          ],
           colors: [
             color,
-            color2,
+            color4,
           ],
         )),
         child: ListView(
