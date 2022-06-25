@@ -180,7 +180,10 @@ class _LoginViewState extends State<LoginView> {
                                 fontWeight: FontWeight.bold),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, RoutesNames.FORGETPASSWORD);
+                            },
                             child: Text(Strings.strings.resetPassword),
                           ),
                         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meu_guaipeca/presentation/forget_password/view/forget_password_view.dart';
 import 'package:meu_guaipeca/presentation/registration/view/register_choose_view.dart';
 import 'package:meu_guaipeca/presentation/registration/view/register_cnpj_view.dart';
 import 'package:meu_guaipeca/presentation/registration/view/register_cpf_view.dart';
@@ -11,5 +12,6 @@ class Routes {
     RoutesNames.REGISTERCHOOSE: (context) => RegisterChooseView(),
     RoutesNames.REGISTERCPF: (context) => RegisterCpfView(),
     RoutesNames.REGISTERCNPJ: (context) => RegisterCnpjView(),
+    RoutesNames.FORGETPASSWORD: (context) => ForgetPasswordView(),
   };
 }
