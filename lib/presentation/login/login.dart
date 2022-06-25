@@ -14,12 +14,24 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   bool _isVisible = false;
   final color = const Color(0XFFdbb49f);
+  final color2 = const Color(0XFFF8E214);
+  final color3 = const Color(0XFF716D75);
+  final color4 = const Color(0XFFF79814);
+  final color5 = const Color(0XFF0A58F7);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color,
-      body: Center(
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          colors: [
+            color,
+            color2,
+          ],
+        )),
         child: ListView(
           children: [
             Padding(
