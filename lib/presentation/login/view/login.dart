@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:meu_guaipeca/presentation/components/image_text_button.dart';
+import 'package:meu_guaipeca/presentation/login/view_model/login_view_model.dart';
 import 'package:meu_guaipeca/settings/Strings/strings.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
@@ -12,6 +13,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  var _loginViewModel = LoginViewModel();
   bool _isVisible = false;
   final color = const Color(0XFFdbb49f);
   final color2 = const Color(0XFFF8E214);
@@ -53,6 +55,7 @@ class _LoginViewState extends State<LoginView> {
                     height: MediaQuery.of(context).size.height * 0.01,
                   ),
                   TextFormField(
+                    controller: _loginViewModel.emailController,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.all(8),
@@ -78,6 +81,7 @@ class _LoginViewState extends State<LoginView> {
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
                   TextFormField(
+                    controller: _loginViewModel.passwordController,
                     keyboardType: TextInputType.text,
                     obscureText: !_isVisible,
                     decoration: InputDecoration(

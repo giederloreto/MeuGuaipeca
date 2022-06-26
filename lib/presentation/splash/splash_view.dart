@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
-import 'package:meu_guaipeca/presentation/login/login.dart';
+import 'package:meu_guaipeca/presentation/login/view/login.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 class SplashView extends StatefulWidget {
