@@ -3,6 +3,7 @@ import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart'
 import 'package:meu_guaipeca/presentation/components/guaipeca_separate.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_form_field.dart';
 import 'package:meu_guaipeca/presentation/registration/view_model/register_cpf_view_model.dart';
+import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 class RegisterCpfView extends StatefulWidget {
   const RegisterCpfView({Key? key}) : super(key: key);
@@ -83,11 +84,9 @@ class _RegisterCpfViewState extends State<RegisterCpfView> {
                 ),
                 GuaipecaLargeButton(
                   label: 'Concluir',
-                  onTap: () {
-                    _registerCpfViewModel.signup(
-                        _registerCpfViewModel.controllerEmail.text,
-                        _registerCpfViewModel.controllerPassword.text,
-                        context);
+                  onTap: () async {
+                    _registerCpfViewModel.register;
+                    Navigator.pushNamed(context, RoutesNames.SPLASH);
                   },
                 )
               ],
