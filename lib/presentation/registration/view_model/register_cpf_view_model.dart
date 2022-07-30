@@ -14,7 +14,7 @@ class RegisterCpfViewModel extends ChangeNotifier {
 
   RegisterCpfViewModel(this._registrationBusiness);
 
-  Future<void> register(String email, String password) async {
+  Future<void> register() async {
     try {
       await _registrationBusiness.registration(
           controllerEmail.text, controllerPassword.text);

@@ -89,9 +89,7 @@ class _RegisterCpfViewState extends State<RegisterCpfView> {
                 GuaipecaLargeButton(
                   label: 'Concluir',
                   onTap: () async {
-                    _registerCpfViewModel.register(
-                        _registerCpfViewModel.controllerEmail.text,
-                        _registerCpfViewModel.controllerPassword.text);
+                    _registerCpfViewModel.register();
 
                     Navigator.pushNamed(context, RoutesNames.SPLASH);
                   },
