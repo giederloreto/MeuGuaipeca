@@ -13,7 +13,7 @@ class _GuaipecaBottomBarState extends State<GuaipecaBottomBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      selectedLabelStyle: TextStyle(
+      selectedLabelStyle: const TextStyle(
           fontFamily: 'Quicksand', fontSize: 14, fontWeight: FontWeight.bold),
       selectedItemColor: Colors.orange,
       selectedFontSize: 30,

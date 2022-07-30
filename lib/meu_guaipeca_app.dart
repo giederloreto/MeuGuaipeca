@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meu_guaipeca/presentation/home/home_view.dart';
-import 'package:meu_guaipeca/presentation/login/view/login.dart';
-import 'package:meu_guaipeca/presentation/registration/view/register_choose_view.dart';
-import 'package:meu_guaipeca/presentation/registration/view/register_cnpj_view.dart';
-import 'package:meu_guaipeca/presentation/registration/view/register_cpf_view.dart';
 import 'package:meu_guaipeca/settings/routes/routes.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 

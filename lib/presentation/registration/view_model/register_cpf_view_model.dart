@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:meu_guaipeca/business/registration/registration_network.dart';
+import 'package:meu_guaipeca/business/registration/registration_business.dart';
 
 class RegisterCpfViewModel extends ChangeNotifier {
   late RegistrationBusiness _registrationBusiness;
@@ -14,7 +14,7 @@ class RegisterCpfViewModel extends ChangeNotifier {
 
   Future<void> register(String email, String password) async {
     try {
-      _registrationBusiness.registration(
+      await _registrationBusiness.registration(
           controllerEmail.text, controllerPassword.text);
     } on FirebaseAuthException catch (e) {
       log(e.toString());

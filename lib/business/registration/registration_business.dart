@@ -5,7 +5,6 @@ class RegistrationBusiness {
 
   RegistrationBusiness(this._registrationNetwork);
 
-  Future registration(email, password) async {
-    _registrationNetwork.registration(email, password);
-  }
+  Future<void> registration(String email, String password) async =>
+      await _registrationNetwork.registration(email, password);
 }

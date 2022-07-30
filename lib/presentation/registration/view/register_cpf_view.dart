@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_separate.dart';
@@ -86,6 +89,7 @@ class _RegisterCpfViewState extends State<RegisterCpfView> {
                   label: 'Concluir',
                   onTap: () async {
                     _registerCpfViewModel.register;
+
                     Navigator.pushNamed(context, RoutesNames.SPLASH);
                   },
                 )

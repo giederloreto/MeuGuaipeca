@@ -4,7 +4,7 @@ class GuaipecaTextFormField extends StatefulWidget {
   final String label;
   final TextEditingController? controller;
 
-  GuaipecaTextFormField({required this.label, this.controller, Key? key})
+  const GuaipecaTextFormField({required this.label, this.controller, Key? key})
       : super(key: key);
 
   @override

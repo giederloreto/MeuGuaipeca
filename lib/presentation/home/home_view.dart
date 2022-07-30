@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meu_guaipeca/presentation/components/guaipeca_appbar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_bottom_bar.dart';
 
 class HomeView extends StatefulWidget {

@@ -1,3 +1,3 @@
 abstract class IRegistrationNetwork {
-  Future registration(String email, String password);
+  Future<void> registration(String email, String password);
 }
