@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_separate.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_form_field.dart';
@@ -16,7 +17,7 @@ class RegisterCpfView extends StatefulWidget {
 }
 
 class _RegisterCpfViewState extends State<RegisterCpfView> {
-  final _registerCpfViewModel = RegisterCpfViewModel();
+  final _registerCpfViewModel = GetIt.I<RegisterCpfViewModel>();
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -88,7 +89,9 @@ class _RegisterCpfViewState extends State<RegisterCpfView> {
                 GuaipecaLargeButton(
                   label: 'Concluir',
                   onTap: () async {
-                    _registerCpfViewModel.register;
+                    _registerCpfViewModel.register(
+                        _registerCpfViewModel.controllerEmail.text,
+                        _registerCpfViewModel.controllerPassword.text);
 
                     Navigator.pushNamed(context, RoutesNames.SPLASH);
                   },

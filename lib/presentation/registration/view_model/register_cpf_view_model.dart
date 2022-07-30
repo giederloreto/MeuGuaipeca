@@ -4,13 +4,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:meu_guaipeca/business/registration/registration_business.dart';
 
 class RegisterCpfViewModel extends ChangeNotifier {
-  late RegistrationBusiness _registrationBusiness;
+  final RegistrationBusiness _registrationBusiness;
 
   TextEditingController controllerName = TextEditingController();
   TextEditingController controllerEmail = TextEditingController();
   TextEditingController controllerCpf = TextEditingController();
   TextEditingController controllerPassword = TextEditingController();
   TextEditingController controllerPasswordConfirm = TextEditingController();
+
+  RegisterCpfViewModel(this._registrationBusiness);
 
   Future<void> register(String email, String password) async {
     try {
