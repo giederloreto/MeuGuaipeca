@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meu_guaipeca/presentation/components/guaipeca_text_form_field.dart';
 
 import 'package:meu_guaipeca/presentation/components/image_text_button.dart';
 import 'package:meu_guaipeca/presentation/login/view_model/login_view_model.dart';
@@ -15,10 +16,10 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   var _loginViewModel = LoginViewModel();
   bool _isVisible = false;
-  final color = const Color(0XFFdbb49f);
-  final color2 = const Color(0XFFF8E214);
+  final color = const Color(0XFFFFFFFF);
+  final color2 = const Color(0XFFFFFFFF);
   final color3 = const Color(0XFF716D75);
-  final color4 = const Color(0XFFF79814);
+  final color4 = const Color(0XFFFFFFFF);
   final color5 = const Color(0XFF0A58F7);
 
   @override
@@ -46,8 +47,21 @@ class _LoginViewState extends State<LoginView> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Center(
+                    child: const Text(
+                      'Meu Guaipeca',
+                      style: TextStyle(
+                        fontFamily: 'Quicksand',
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.02,
+                  ),
                   Image.asset(
-                    'assets/images/logo05.png',
+                    'assets/images/guaipeca_logo.png',
                     height: MediaQuery.of(context).size.height * 0.30,
                     width: MediaQuery.of(context).size.width * 0.15,
                   ),
@@ -145,13 +159,13 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.05,
+                    height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   const Divider(
                     thickness: 2,
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.05,
+                    height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   ImageTextButton(
                     onPressed: () {},

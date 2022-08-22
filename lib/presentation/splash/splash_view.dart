@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meu_guaipeca/presentation/home/home_view.dart';
 import 'package:meu_guaipeca/presentation/login/view/login.dart';
 
 class SplashView extends StatefulWidget {
