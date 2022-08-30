@@ -14,6 +14,7 @@ class RegistrationNetwork implements IRegistrationNetwork {
       log('Registrou!');
     } on FirebaseAuthException catch (e) {
       log(e.message.toString());
+      log('Não Registrou');
     }
   }
 }

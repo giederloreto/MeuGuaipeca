@@ -33,68 +33,70 @@ class _RegisterCpfViewState extends State<RegisterCpfView> {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Center(
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                const Text(
-                  'Faça seu cadastro',
-                  style: TextStyle(
-                    fontFamily: 'Quicksand',
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Center(
+            child: Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  const Text(
+                    'Faça seu cadastro',
+                    style: TextStyle(
+                      fontFamily: 'Quicksand',
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const GuaipecaSeparate(
-                  height: 20,
-                ),
-                GuaipecaTextFormField(
-                  label: 'Nome',
-                  controller: _registerCpfViewModel.controllerName,
-                ),
-                const GuaipecaSeparate(
-                  height: 20,
-                ),
-                GuaipecaTextFormField(
-                  label: 'E-mail',
-                  controller: _registerCpfViewModel.controllerEmail,
-                ),
-                const GuaipecaSeparate(
-                  height: 20,
-                ),
-                GuaipecaTextFormField(
-                  label: 'CPF',
-                  controller: _registerCpfViewModel.controllerCpf,
-                ),
-                const GuaipecaSeparate(
-                  height: 20,
-                ),
-                GuaipecaTextFormField(
-                  label: 'Senha',
-                  controller: _registerCpfViewModel.controllerPassword,
-                ),
-                const GuaipecaSeparate(
-                  height: 20,
-                ),
-                GuaipecaTextFormField(
-                    label: 'Confirmar Senha',
-                    controller:
-                        _registerCpfViewModel.controllerPasswordConfirm),
-                const GuaipecaSeparate(
-                  height: 20,
-                ),
-                GuaipecaLargeButton(
-                  label: 'Concluir',
-                  onTap: () async {
-                    _registerCpfViewModel.register();
+                  const GuaipecaSeparate(
+                    height: 20,
+                  ),
+                  GuaipecaTextFormField(
+                    label: 'Nome',
+                    controller: _registerCpfViewModel.controllerName,
+                  ),
+                  const GuaipecaSeparate(
+                    height: 20,
+                  ),
+                  GuaipecaTextFormField(
+                    label: 'E-mail',
+                    controller: _registerCpfViewModel.controllerEmail,
+                  ),
+                  const GuaipecaSeparate(
+                    height: 20,
+                  ),
+                  GuaipecaTextFormField(
+                    label: 'CPF',
+                    controller: _registerCpfViewModel.controllerCpf,
+                  ),
+                  const GuaipecaSeparate(
+                    height: 20,
+                  ),
+                  GuaipecaTextFormField(
+                    label: 'Senha',
+                    controller: _registerCpfViewModel.controllerPassword,
+                  ),
+                  const GuaipecaSeparate(
+                    height: 20,
+                  ),
+                  GuaipecaTextFormField(
+                      label: 'Confirmar Senha',
+                      controller:
+                          _registerCpfViewModel.controllerPasswordConfirm),
+                  const GuaipecaSeparate(
+                    height: 20,
+                  ),
+                  GuaipecaLargeButton(
+                    label: 'Concluir',
+                    onTap: () async {
+                      await _registerCpfViewModel.register();
 
-                    Navigator.pushNamed(context, RoutesNames.SPLASH);
-                  },
-                )
-              ],
+                      Navigator.pushNamed(context, RoutesNames.LOGIN);
+                    },
+                  )
+                ],
+              ),
             ),
           ),
         ),

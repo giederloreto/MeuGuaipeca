@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_form_field.dart';
 
 import 'package:meu_guaipeca/presentation/components/image_text_button.dart';
@@ -14,7 +17,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  var _loginViewModel = LoginViewModel();
+  final _loginViewModel = GetIt.I<LoginViewModel>();
   bool _isVisible = false;
   final color = const Color(0XFFFFFFFF);
   final color2 = const Color(0XFFFFFFFF);
@@ -140,7 +143,17 @@ class _LoginViewState extends State<LoginView> {
                       elevation: 8,
                       clipBehavior: Clip.hardEdge,
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () async {
+                          try {
+                            await _loginViewModel.login().then((value) =>
+                                Navigator.pushNamed(context, RoutesNames.HOME));
+                            log("Logou VIEW");
+                          } on Exception catch (e) {
+                            log("Não LOGOU");
+                            Navigator.pushNamed(
+                                context, RoutesNames.FORGETPASSWORD);
+                          }
+                        },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

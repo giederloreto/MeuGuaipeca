@@ -14,6 +14,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
+      appBar: AppBar(),
       body: Padding(padding: const EdgeInsets.all(16.0), child: ListView()),
       bottomNavigationBar: const GuaipecaBottomBar(),
     );
