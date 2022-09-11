@@ -27,7 +27,7 @@ class ImageTextButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               height: 40,
               width: 40,
               child: Image.asset(path),

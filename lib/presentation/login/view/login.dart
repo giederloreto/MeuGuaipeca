@@ -2,8 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:meu_guaipeca/presentation/components/guaipeca_text_form_field.dart';
-
 import 'package:meu_guaipeca/presentation/components/image_text_button.dart';
 import 'package:meu_guaipeca/presentation/login/view_model/login_view_model.dart';
 import 'package:meu_guaipeca/settings/Strings/strings.dart';

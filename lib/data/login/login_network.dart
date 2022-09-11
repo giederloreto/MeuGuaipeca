@@ -1,7 +1,5 @@
 import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:meu_guaipeca/data/login/login_network_interface.dart';
 
 class LoginNetwork implements ILoginNetwork {

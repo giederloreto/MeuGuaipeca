@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:meu_guaipeca/business/login/login_business.dart';
 import 'package:meu_guaipeca/business/registration/registration_business.dart';
 import 'package:meu_guaipeca/data/registration/registration_network.dart';
 import 'package:meu_guaipeca/data/registration/registration_network_interface.dart';
@@ -34,7 +35,9 @@ class DependecyInjection {
       ),
     );
     getIt.registerFactory<LoginViewModel>(
-      () => LoginViewModel(loginNetwork: loginNetwork),
+      () => LoginViewModel(
+        getIt<LoginBusiness>(),
+      ),
     );
   }
 }
