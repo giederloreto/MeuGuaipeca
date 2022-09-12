@@ -1,6 +1,8 @@
 import 'package:get_it/get_it.dart';
 import 'package:meu_guaipeca/business/login/login_business.dart';
 import 'package:meu_guaipeca/business/registration/registration_business.dart';
+import 'package:meu_guaipeca/data/login/login_network.dart';
+import 'package:meu_guaipeca/data/login/login_network_interface.dart';
 import 'package:meu_guaipeca/data/registration/registration_network.dart';
 import 'package:meu_guaipeca/data/registration/registration_network_interface.dart';
 import 'package:meu_guaipeca/presentation/login/view_model/login_view_model.dart';
@@ -20,11 +22,17 @@ class DependecyInjection {
     getIt.registerFactory<IRegistrationNetwork>(
       () => RegistrationNetwork(),
     );
+    getIt.registerFactory<ILoginNetwork>(
+      () => LoginNetwork(),
+    );
   }
 
   Future<void> _configureBusiness() async {
     getIt.registerFactory<RegistrationBusiness>(
       () => RegistrationBusiness(getIt<IRegistrationNetwork>()),
+    );
+    getIt.registerFactory<LoginBusiness>(
+      () => LoginBusiness(getIt<ILoginNetwork>()),
     );
   }
 

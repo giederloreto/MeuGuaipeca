@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:lottie/lottie.dart';
 import 'package:meu_guaipeca/presentation/components/image_text_button.dart';
 import 'package:meu_guaipeca/presentation/login/view_model/login_view_model.dart';
 import 'package:meu_guaipeca/settings/Strings/strings.dart';
@@ -17,59 +18,48 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   final _loginViewModel = GetIt.I<LoginViewModel>();
   bool _isVisible = false;
-  final color = const Color(0XFFFFFFFF);
-  final color2 = const Color(0XFFFFFFFF);
-  final color3 = const Color(0XFF716D75);
-  final color4 = const Color(0XFFFFFFFF);
-  final color5 = const Color(0XFF0A58F7);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          stops: [
-            0.4,
-            0.8,
-          ],
-          colors: [
-            color,
-            color4,
-          ],
-        )),
+        
         child: ListView(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Center(
-                    child: const Text(
-                      'Meu Guaipeca',
-                      style: TextStyle(
-                        fontFamily: 'Quicksand',
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [            
+                SizedBox(
+                  child: Lottie.network("https://assets5.lottiefiles.com/private_files/lf30_fz6lkjf0.json"),
+                ),
+                const Padding(
+                  padding:  EdgeInsets.only(bottom:16.0),
+                  child:  Text(
+                    'Meu Guaipeca',
+                    style: TextStyle(
+                      fontFamily: 'Quicksand',
+                      fontSize: 34,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white
                     ),
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
-                  ),
-                  Image.asset(
-                    'assets/images/guaipeca_logo.png',
-                    height: MediaQuery.of(context).size.height * 0.30,
-                    width: MediaQuery.of(context).size.width * 0.15,
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.01,
-                  ),
-                  TextFormField(
+                ),
+                ],),
+                
+                /* Image.asset(
+                  'assets/images/guaipeca_logo.png',
+                  height: MediaQuery.of(context).size.height * 0.30,
+                  width: MediaQuery.of(context).size.width * 0.15,
+                ), */
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.01,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
                     controller: _loginViewModel.emailController,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
@@ -92,10 +82,10 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.03,
-                  ),
-                  TextFormField(
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextFormField(
                     controller: _loginViewModel.passwordController,
                     keyboardType: TextInputType.text,
                     obscureText: !_isVisible,
@@ -132,10 +122,11 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.05,
-                  ),
-                  SizedBox(
+                ),
+                
+                Padding(
+                  padding: const EdgeInsets.only(top:8, left:16.0, right: 16.0, bottom: 8),
+                  child: SizedBox(
                     height: 50,
                     child: Card(
                       elevation: 8,
@@ -169,16 +160,15 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
-                  ),
-                  const Divider(
-                    thickness: 2,
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.02,
-                  ),
-                  ImageTextButton(
+                ),
+               
+                const Divider(
+                  thickness: 2,
+                ),
+                
+                Padding(
+                  padding: const EdgeInsets.only(top:8, left:16.0, right: 16.0, bottom: 8),
+                  child: ImageTextButton(
                     onPressed: () {},
                     imageHeight: 100,
                     text: Text(
@@ -190,53 +180,53 @@ class _LoginViewState extends State<LoginView> {
                     ),
                     path: 'assets/images/google.png',
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.005,
-                  ),
-                  Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            Strings.strings.dontHaveAccount,
-                            style: const TextStyle(
-                                fontFamily: 'Quicksand',
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(
-                                  context, RoutesNames.REGISTERCHOOSE);
-                            },
-                            child: Text(Strings.strings.subscribe),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            Strings.strings.forgetPassword,
-                            style: const TextStyle(
-                                fontFamily: 'Quicksand',
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(
-                                  context, RoutesNames.FORGETPASSWORD);
-                            },
-                            child: Text(Strings.strings.resetPassword),
-                          ),
-                        ],
-                      ),
-                    ],
-                  )
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.005,
+                ),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          Strings.strings.dontHaveAccount,
+                          style: const TextStyle(
+                              fontFamily: 'Quicksand',
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, RoutesNames.REGISTERCHOOSE);
+                          },
+                          child: Text(Strings.strings.subscribe),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          Strings.strings.forgetPassword,
+                          style: const TextStyle(
+                              fontFamily: 'Quicksand',
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, RoutesNames.FORGETPASSWORD);
+                          },
+                          child: Text(Strings.strings.resetPassword),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
+              ],
             ),
           ],
         ),

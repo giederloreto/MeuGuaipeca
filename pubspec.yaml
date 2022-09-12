@@ -37,6 +37,7 @@ dependencies:
   firebase_core: ^1.17.1
   firebase_analytics: ^9.1.9
   get_it: 7.2.0
+  lottie:
 
 dev_dependencies:
   flutter_test:
