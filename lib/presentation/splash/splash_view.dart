@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meu_guaipeca/presentation/home/home_view.dart';
 import 'package:meu_guaipeca/presentation/login/view/login.dart';
 
 class SplashView extends StatefulWidget {
@@ -14,7 +15,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 1)).then((_) => Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => LoginView())));
+        context, MaterialPageRoute(builder: (context) => HomeView())));
     super.initState();
   }
 
