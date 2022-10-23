@@ -4,8 +4,16 @@ import 'package:meu_guaipeca/presentation/components/guaipeca_text_default.dart'
 class GuaipecaCardNew extends StatelessWidget {
   final String image;
   final String title;
-  final String subTitle;
-  const GuaipecaCardNew({Key? key, required this.image, required this.title, required this.subTitle}) : super(key: key);
+  final String authorName;
+  final String authorImage;
+
+  const GuaipecaCardNew(
+      {Key? key,
+      required this.image,
+      required this.title,
+      required this.authorName,
+      required this.authorImage})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +48,7 @@ class GuaipecaCardNew extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(16.0),
                 child: Image.network(
-                  image ?? '',
+                  image,
                   fit: BoxFit.cover,
                   height: 150,
                   width: 300,
@@ -49,13 +57,29 @@ class GuaipecaCardNew extends StatelessWidget {
             ],
           ),
           GuaipecaTextDefault(
-            text: title ?? '',
+            text: title,
             fontSize: 18,
           ),
-          GuaipecaTextDefault(
-            text: subTitle ?? '',
-            fontSize: 12,
-          )
+          Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(48.0),
+                child: Image.network(
+                  authorImage,
+                  fit: BoxFit.cover,
+                  height: 25,
+                  width: 25,
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              GuaipecaTextDefault(
+                text: authorName,
+                fontSize: 14,
+              ),
+            ],
+          ),
         ],
       ),
     );
