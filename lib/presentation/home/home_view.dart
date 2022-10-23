@@ -31,29 +31,34 @@ class _HomeViewState extends State<HomeView> {
         GuaipecaCardNew(
           image:
               'https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y',
-          title: 'Titulo da News',
+          title: 'O Inverno para seu Pet',
           authorImage:
               'https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY',
           authorName: 'Gieder Loreto',
         ),
         GuaipecaCardNew(
           image:
-              'https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y',
-          title: 'Titulo da News',
+              'https://media.istockphoto.com/photos/happy-dog-puppy-winking-an-eye-and-smiling-on-colored-blue-backgorund-picture-id1279308976?s=612x612',
+          title: 'Existe cão albino?',
           authorImage:
-              'https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY',
-          authorName: 'Gieder Loreto',
+              'https://media.istockphoto.com/vectors/young-smiling-man-adam-avatar-vector-id1365197769?s=612x612',
+          authorName: 'Alex Valério',
         ),
         GuaipecaCardNew(
           image:
-              'https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y',
-          title: 'Titulo da News',
+              'https://media.istockphoto.com/photos/british-short-hair-cat-and-golden-retriever-picture-id992637094?s=612x612',
+          title: 'Dicas: Cão e Gato em Casa.',
           authorImage:
-              'https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY',
-          authorName: 'Gieder Loreto',
+              'https://media.istockphoto.com/photos/illustration-of-cute-cartoon-man-with-eyeglasses-in-blue-shirt-with-picture-id1312136351?s=612x612',
+          authorName: 'Fabio Vasques',
         ),
       ]),
       bottomNavigationBar: const GuaipecaBottomBar(),
+      /* floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.black12,
+      ), */
     );
   }
 }
