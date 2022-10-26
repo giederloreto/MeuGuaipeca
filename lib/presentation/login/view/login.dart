@@ -22,7 +22,6 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        
         child: ListView(
           children: [
             Column(
@@ -31,24 +30,25 @@ class _LoginViewState extends State<LoginView> {
               children: [
                 Stack(
                   alignment: Alignment.bottomCenter,
-                  children: [            
-                SizedBox(
-                  child: Lottie.network("https://assets5.lottiefiles.com/private_files/lf30_fz6lkjf0.json"),
-                ),
-                const Padding(
-                  padding:  EdgeInsets.only(bottom:16.0),
-                  child:  Text(
-                    'Meu Guaipeca',
-                    style: TextStyle(
-                      fontFamily: 'Quicksand',
-                      fontSize: 34,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white
+                  children: [
+                    SizedBox(
+                      child: Lottie.network(
+                          "https://assets5.lottiefiles.com/private_files/lf30_fz6lkjf0.json"),
                     ),
-                  ),
+                    const Padding(
+                      padding: EdgeInsets.only(bottom: 16.0),
+                      child: Text(
+                        'Meu Guaipeca',
+                        style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 34,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ],
                 ),
-                ],),
-                
+
                 /* Image.asset(
                   'assets/images/guaipeca_logo.png',
                   height: MediaQuery.of(context).size.height * 0.30,
@@ -123,9 +123,9 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                 ),
-                
                 Padding(
-                  padding: const EdgeInsets.only(top:8, left:16.0, right: 16.0, bottom: 8),
+                  padding: const EdgeInsets.only(
+                      top: 8, left: 16.0, right: 16.0, bottom: 8),
                   child: SizedBox(
                     height: 50,
                     child: Card(
@@ -136,9 +136,10 @@ class _LoginViewState extends State<LoginView> {
                           try {
                             await _loginViewModel.login().then((value) =>
                                 Navigator.pushNamed(context, RoutesNames.HOME));
+
                             log("Logou VIEW");
                           } on Exception catch (e) {
-                            log("Não LOGOU");
+                            log("Não LOGOU porque? $e");
                             Navigator.pushNamed(
                                 context, RoutesNames.FORGETPASSWORD);
                           }
@@ -161,13 +162,12 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                 ),
-               
                 const Divider(
                   thickness: 2,
                 ),
-                
                 Padding(
-                  padding: const EdgeInsets.only(top:8, left:16.0, right: 16.0, bottom: 8),
+                  padding: const EdgeInsets.only(
+                      top: 8, left: 16.0, right: 16.0, bottom: 8),
                   child: ImageTextButton(
                     onPressed: () {},
                     imageHeight: 100,
