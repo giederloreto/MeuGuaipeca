@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/meu_guaipeca_app.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_bottom_bar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_card_news.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_default.dart';
+import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -26,6 +28,17 @@ class _HomeViewState extends State<HomeView> {
           fontSize: 18,
           color: Colors.black,
         ),
+        actions: [
+          IconButton(
+              onPressed: () async {
+                await FirebaseAuth.instance.signOut();
+                Navigator.pushNamed(context, RoutesNames.LOGIN);
+              },
+              icon: Icon(
+                Icons.logout,
+                color: Colors.black,
+              )),
+        ],
       ),
       body: ListView(children: const [
         GuaipecaCardNew(
