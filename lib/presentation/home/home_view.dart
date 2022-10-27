@@ -34,7 +34,7 @@ class _HomeViewState extends State<HomeView> {
                 await FirebaseAuth.instance.signOut();
                 Navigator.pushNamed(context, RoutesNames.LOGIN);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.logout,
                 color: Colors.black,
               )),
