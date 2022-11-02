@@ -6,4 +6,5 @@ class RoutesNames {
   static String REGISTERCNPJ = '/registercnpj';
   static String FORGETPASSWORD = '/forgetpassword';
   static String HOME = '/homeview';
+  static String MYPETS = '/mypets';
 }

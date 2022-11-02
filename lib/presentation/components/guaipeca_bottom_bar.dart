@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_icon.dart';
+import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 class GuaipecaBottomBar extends StatefulWidget {
   const GuaipecaBottomBar({Key? key}) : super(key: key);
@@ -27,6 +28,7 @@ class _GuaipecaBottomBarState extends State<GuaipecaBottomBar> {
         iconSize: MediaQuery.of(context).size.width * 0.07,
         currentIndex: _indexBottom,
         type: BottomNavigationBarType.fixed,
+
         // ignore: prefer_const_literals_to_create_immutables
         items: [
           const BottomNavigationBarItem(
@@ -67,7 +69,13 @@ class _GuaipecaBottomBarState extends State<GuaipecaBottomBar> {
         ],
         onTap: (index) {
           setState(() {
-            _indexBottom = index;
+            switch (index) {
+              case 0:
+                Navigator.popAndPushNamed(context, RoutesNames.HOME, arguments: index);
+                break;
+              case 1:
+                Navigator.popAndPushNamed(context, RoutesNames.MYPETS, arguments: index);
+            }
           });
         },
       ),

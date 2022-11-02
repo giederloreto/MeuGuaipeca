@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/presentation/forget_password/view/forget_password_view.dart';
 import 'package:meu_guaipeca/presentation/home/home_view.dart';
 import 'package:meu_guaipeca/presentation/login/view/login.dart';
+import 'package:meu_guaipeca/presentation/my_pets/my_pets_view/my_pets_view.dart';
 import 'package:meu_guaipeca/presentation/registration/view/register_choose_view.dart';
 import 'package:meu_guaipeca/presentation/registration/view/register_cnpj_view.dart';
 import 'package:meu_guaipeca/presentation/registration/view/register_cpf_view.dart';
@@ -17,5 +18,6 @@ class Routes {
     RoutesNames.FORGETPASSWORD: (context) => ForgetPasswordView(),
     RoutesNames.LOGIN: (context) => LoginView(),
     RoutesNames.HOME: (context) => HomeView(),
+    RoutesNames.MYPETS: (context) => MyPetsView(),
   };
 }

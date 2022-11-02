@@ -121,8 +121,7 @@ class _LoginViewState extends State<LoginView> {
                   child: InkWell(
                     onTap: () async {
                       try {
-                        await _loginViewModel.login().then((value) =>
-                            Navigator.pushNamed(context, RoutesNames.HOME));
+                        await _loginViewModel.login(context);
 
                         log("Logou VIEW");
                       } on Exception catch (e) {
