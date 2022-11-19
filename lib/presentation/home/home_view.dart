@@ -17,11 +17,11 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow[200],
+      backgroundColor: Colors.lightBlue[50],
       extendBody: true,
       extendBodyBehindAppBar: false,
       appBar: AppBar(
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.lightBlue[200],
         leading: const Text(''),
         title: const GuaipecaTextDefault(
           text: 'Bem Vindo ao Meu Guaipeca',
@@ -66,7 +66,9 @@ class _HomeViewState extends State<HomeView> {
           authorName: 'Fabio Vasques',
         ),
       ]),
-      bottomNavigationBar: const GuaipecaBottomBar(),
+      bottomNavigationBar: const GuaipecaBottomBar(
+        indexBottom: 0,
+      ),
       /* floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.add),

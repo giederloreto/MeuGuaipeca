@@ -3,63 +3,62 @@ import 'package:meu_guaipeca/presentation/components/guaipeca_icon.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 class GuaipecaBottomBar extends StatefulWidget {
-  const GuaipecaBottomBar({Key? key}) : super(key: key);
+  final int indexBottom;
+  const GuaipecaBottomBar({required this.indexBottom, Key? key})
+      : super(key: key);
 
   @override
   State<GuaipecaBottomBar> createState() => _GuaipecaBottomBarState();
 }
 
 class _GuaipecaBottomBarState extends State<GuaipecaBottomBar> {
-  int _indexBottom = 0;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.only(
+      borderRadius: const BorderRadius.only(
         topLeft: Radius.circular(30.0),
         topRight: Radius.circular(30.0),
       ),
       child: BottomNavigationBar(
         selectedLabelStyle: const TextStyle(
             fontFamily: 'Quicksand', fontSize: 14, fontWeight: FontWeight.bold),
-        selectedItemColor: Colors.orange,
+        selectedItemColor: Colors.lightBlue[500],
         selectedFontSize: 30,
         backgroundColor: Colors.white70,
         elevation: 5,
         iconSize: MediaQuery.of(context).size.width * 0.07,
-        currentIndex: _indexBottom,
+        currentIndex: widget.indexBottom,
         type: BottomNavigationBarType.fixed,
-
-        // ignore: prefer_const_literals_to_create_immutables
-        items: [
-          const BottomNavigationBarItem(
+        items: const [
+          BottomNavigationBarItem(
             icon: Icon(
               GuaipecaIcon.newspaper,
               color: Colors.black,
             ),
             label: 'Feed',
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(
               GuaipecaIcon.dog,
               color: Colors.black,
             ),
             label: 'Meus Pets',
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(
               GuaipecaIcon.baby_carriage,
               color: Colors.black,
             ),
             label: 'Adoção',
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(
               GuaipecaIcon.shop,
               color: Colors.black,
             ),
             label: 'Loja',
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(
               GuaipecaIcon.user,
               color: Colors.black,
@@ -71,10 +70,18 @@ class _GuaipecaBottomBarState extends State<GuaipecaBottomBar> {
           setState(() {
             switch (index) {
               case 0:
-                Navigator.popAndPushNamed(context, RoutesNames.HOME, arguments: index);
+                Navigator.pushReplacementNamed(
+                  context,
+                  RoutesNames.HOME,
+                );
                 break;
               case 1:
-                Navigator.popAndPushNamed(context, RoutesNames.MYPETS, arguments: index);
+                Navigator.pushReplacementNamed(
+                  context,
+                  RoutesNames.MYPETS,
+                );
+              /* Navigator.popAndPushNamed(context, RoutesNames.MYPETS,
+                    arguments: index); */
             }
           });
         },
