@@ -13,6 +13,8 @@ class _StoreViewState extends State<StoreView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
+      extendBodyBehindAppBar: false,
       backgroundColor: Colors.lightBlue[50],
       appBar: const GuaipecaAppBar(
         title: 'Loja',

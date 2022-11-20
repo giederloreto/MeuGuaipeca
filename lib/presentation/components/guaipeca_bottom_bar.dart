@@ -20,6 +20,7 @@ class _GuaipecaBottomBarState extends State<GuaipecaBottomBar> {
         topRight: Radius.circular(30.0),
       ),
       child: BottomNavigationBar(
+        
         selectedLabelStyle: const TextStyle(
             fontFamily: 'Quicksand', fontSize: 14, fontWeight: FontWeight.bold),
         selectedItemColor: Colors.lightBlue[500],

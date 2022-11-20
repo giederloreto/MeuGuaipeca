@@ -13,10 +13,15 @@ class _ProfileViewState extends State<ProfileView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
+      extendBodyBehindAppBar: false,
       backgroundColor: Colors.lightBlue[50],
-      appBar: const GuaipecaAppBar(title: 'Perfil', showBackIcon: false,),
+      appBar: const GuaipecaAppBar(
+        title: 'Perfil',
+        showBackIcon: false,
+      ),
       body: Container(),
-      bottomNavigationBar:const GuaipecaBottomBar(indexBottom: 4),
+      bottomNavigationBar: const GuaipecaBottomBar(indexBottom: 4),
     );
   }
 }

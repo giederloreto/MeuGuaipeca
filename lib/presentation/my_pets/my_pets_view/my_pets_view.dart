@@ -21,13 +21,36 @@ class _MyPetsViewState extends State<MyPetsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
+      extendBodyBehindAppBar: false,
       backgroundColor: Colors.lightBlue[50],
-      appBar: const GuaipecaAppBar(title: 'Meus Pets', showBackIcon: false,),
+      appBar: const GuaipecaAppBar(
+        title: 'Meus Pets',
+        showBackIcon: false,
+      ),
       bottomNavigationBar: const GuaipecaBottomBar(
         indexBottom: 1,
       ),
       body: ListView(
         children: const [
+          GuaipecaMyPetCard(
+            image:
+                'https://static3.depositphotos.com/1006075/220/i/600/depositphotos_2201124-stock-photo-lhasa-apso.jpg',
+            name: 'Oliver',
+            age: '5',
+          ),
+          GuaipecaMyPetCard(
+            image:
+                'https://static3.depositphotos.com/1006075/220/i/600/depositphotos_2201124-stock-photo-lhasa-apso.jpg',
+            name: 'Oliver',
+            age: '5',
+          ),
+          GuaipecaMyPetCard(
+            image:
+                'https://static3.depositphotos.com/1006075/220/i/600/depositphotos_2201124-stock-photo-lhasa-apso.jpg',
+            name: 'Oliver',
+            age: '5',
+          ),
           GuaipecaMyPetCard(
             image:
                 'https://static3.depositphotos.com/1006075/220/i/600/depositphotos_2201124-stock-photo-lhasa-apso.jpg',

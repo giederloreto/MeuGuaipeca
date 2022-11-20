@@ -13,6 +13,8 @@ class _AdoptionViewState extends State<AdoptionView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
+      extendBodyBehindAppBar: false,
       backgroundColor: Colors.lightBlue[50],
       appBar: const GuaipecaAppBar(
         title: 'Animais para Adoção',
