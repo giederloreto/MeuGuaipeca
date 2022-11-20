@@ -5,7 +5,15 @@ class GuaipecaMyPetCard extends StatelessWidget {
   final String image;
   final String name;
   final String age;
-  const GuaipecaMyPetCard({required this.image, required this.name, required this.age, Key? key})
+  final double? width;
+  final double? height;
+  const GuaipecaMyPetCard(
+      {required this.image,
+      required this.name,
+      required this.age,
+      this.height,
+      this.width,
+      Key? key})
       : super(key: key);
 
   @override
@@ -36,8 +44,8 @@ class GuaipecaMyPetCard extends StatelessWidget {
             child: Image.network(
               image,
               fit: BoxFit.cover,
-              height: 150,
-              width: 300,
+              height: height ?? 150,
+              width: width ?? 300,
             ),
           ),
           Row(
@@ -55,11 +63,11 @@ class GuaipecaMyPetCard extends StatelessWidget {
           Row(
             children: [
               const GuaipecaTextDefault(
-                text: 'Idade',
+                text: 'Idade: ',
                 fontSize: 18,
               ),
               GuaipecaTextDefault(
-                text: age,
+                text: age == '1' ? age + ' ano' : age + ' anos',
                 fontSize: 18,
               ),
             ],
