@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meu_guaipeca/presentation/adoption/adoption_view/adoption_view.dart';
 import 'package:meu_guaipeca/presentation/forget_password/view/forget_password_view.dart';
 import 'package:meu_guaipeca/presentation/home/home_view.dart';
 import 'package:meu_guaipeca/presentation/login/view/login.dart';
@@ -13,11 +14,12 @@ class Routes {
   static Map<String, Widget Function(BuildContext)> routes = {
     RoutesNames.SPLASH: (context) => SplashView(),
     RoutesNames.REGISTERCHOOSE: (context) => RegisterChooseView(),
-    RoutesNames.REGISTERCPF: (context) => RegisterCpfView(),
-    RoutesNames.REGISTERCNPJ: (context) => RegisterCnpjView(),
+    RoutesNames.REGISTERCPF: (context) => const RegisterCpfView(),
+    RoutesNames.REGISTERCNPJ: (context) => const RegisterCnpjView(),
     RoutesNames.FORGETPASSWORD: (context) => ForgetPasswordView(),
     RoutesNames.LOGIN: (context) => LoginView(),
-    RoutesNames.HOME: (context) => HomeView(),
-    RoutesNames.MYPETS: (context) => MyPetsView(),
+    RoutesNames.HOME: (context) => const HomeView(),
+    RoutesNames.MYPETS: (context) => const MyPetsView(),
+    RoutesNames.ADOPTION: (context) => const AdoptionView(),
   };
 }

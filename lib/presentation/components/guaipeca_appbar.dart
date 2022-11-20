@@ -1,43 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:meu_guaipeca/presentation/components/guaipeca_text_default.dart';
 
-class GuaipecaAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const GuaipecaAppBar({Key? key}) : super(key: key);
+class GuaipecaAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final String title;
+  final bool? showBackIcon;
+  const GuaipecaAppBar({required this.title, this.showBackIcon,  Key? key}) : super(key: key);
 
   @override
-  State<GuaipecaAppBar> createState() => _GuaipecaAppBarState();
+  Widget build(BuildContext context) {
+    return PreferredSize(
+      preferredSize: const Size.fromHeight(40),
+      child: AppBar(
+        backgroundColor: Colors.lightBlue[200],
+        title: GuaipecaTextDefault(
+          text: title,
+          fontSize: 18,
+        ),
+        centerTitle: true,
+        automaticallyImplyLeading: showBackIcon ?? true,
+      ),
+    );
+  }
 
   @override
   // TODO: implement preferredSize
   Size get preferredSize {
-    var deviceWidth = const Size.fromHeight(100);
+    var deviceWidth = const Size.fromHeight(60);
 
     return deviceWidth;
-  }
-}
-
-class _GuaipecaAppBarState extends State<GuaipecaAppBar> {
-  @override
-  Widget build(BuildContext context) {
-    return PreferredSize(
-      preferredSize: const Size.fromHeight(100),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          // ignore: prefer_const_literals_to_create_immutables
-          actions: [
-            const CircleAvatar(
-              child: Icon(
-                Icons.person,
-                color: Colors.white,
-              ),
-              backgroundColor: Colors.grey,
-              maxRadius: 30,
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }

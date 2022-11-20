@@ -80,6 +80,13 @@ class _GuaipecaBottomBarState extends State<GuaipecaBottomBar> {
                   context,
                   RoutesNames.MYPETS,
                 );
+                break;
+              case 2:
+                Navigator.pushReplacementNamed(
+                  context,
+                  RoutesNames.ADOPTION,
+                );
+                break;
               /* Navigator.popAndPushNamed(context, RoutesNames.MYPETS,
                     arguments: index); */
             }
