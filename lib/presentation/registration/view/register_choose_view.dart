@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meu_guaipeca/presentation/components/guaipeca_appbar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_separate.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
@@ -14,17 +15,8 @@ class _RegisterChooseViewState extends State<RegisterChooseView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child: Text(
-            'Escolha seu tipo de Cadastro',
-            style: TextStyle(
-                fontFamily: 'Quicksand',
-                fontSize: 24,
-                fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
+      appBar: GuaipecaAppBar(title: 'Escolha seu tipo de cadastro',),
+
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -36,7 +28,7 @@ class _RegisterChooseViewState extends State<RegisterChooseView> {
                 Navigator.pushNamed(context, RoutesNames.REGISTERCPF);
               },
             ),
-            GuaipecaSeparate(height: 50),
+            const GuaipecaSeparate(height: 50),
             GuaipecaLargeButton(
               label: 'Associações',
               onTap: () {

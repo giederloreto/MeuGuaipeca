@@ -11,6 +11,7 @@ class RegistrationNetwork implements IRegistrationNetwork {
       var response = await firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
       //  .then((value) => Navigator.pushNamed(context, RoutesNames.SPLASH));
+      
       log('Registrou! Response -> $response'  );
     } on FirebaseAuthException catch (e) {
       log(e.message.toString());

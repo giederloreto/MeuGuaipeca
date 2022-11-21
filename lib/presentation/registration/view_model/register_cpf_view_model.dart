@@ -11,16 +11,35 @@ class RegisterCpfViewModel extends ChangeNotifier {
   TextEditingController controllerCpf = TextEditingController();
   TextEditingController controllerPassword = TextEditingController();
   TextEditingController controllerPasswordConfirm = TextEditingController();
-
-  RegisterCpfViewModel(this._registrationBusiness);
+  late final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  User? usuario;
+  bool isLoading = true;
+  RegisterCpfViewModel(this._registrationBusiness) {
+    _checkAuth();
+  }
 
   Future<void> register() async {
     try {
       await _registrationBusiness.registration(
           controllerEmail.text, controllerPassword.text);
+      _getUser();
     } on FirebaseAuthException catch (e) {
       log(e.toString());
     }
+  }
+
+  _checkAuth() {
+    _firebaseAuth.authStateChanges().listen((User? user) {
+      usuario = (user == null) ? null : user;
+      isLoading = false;
+      notifyListeners();
+    });
+  }
+
+  _getUser() {
+    usuario = _firebaseAuth.currentUser;
+    log(usuario.toString());
+    notifyListeners();
   }
 
   /* signup(String email, String password, BuildContext context) async {

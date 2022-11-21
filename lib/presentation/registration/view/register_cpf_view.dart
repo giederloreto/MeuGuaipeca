@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:meu_guaipeca/presentation/components/guaipeca_appbar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_separate.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_form_field.dart';
@@ -17,19 +18,15 @@ class _RegisterCpfViewState extends State<RegisterCpfView> {
   final _registerCpfViewModel = GetIt.I<RegisterCpfViewModel>();
   final _formKey = GlobalKey<FormState>();
   @override
+  void initState() {
+    _registerCpfViewModel;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child: Text(
-            'Cadastro',
-            style: TextStyle(
-                fontFamily: 'Quicksand',
-                fontSize: 24,
-                fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
+      appBar: const GuaipecaAppBar(title: 'Fazer Cadastro', showBackIcon: false),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
