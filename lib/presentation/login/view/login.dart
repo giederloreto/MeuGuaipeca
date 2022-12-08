@@ -15,9 +15,25 @@ class LoginView extends StatefulWidget {
   State<LoginView> createState() => _LoginViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
   final _loginViewModel = GetIt.I<LoginViewModel>();
+  late final AnimationController _controller;
   bool _isVisible = false;
+  bool isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +46,10 @@ class _LoginViewState extends State<LoginView> {
               alignment: Alignment.bottomCenter,
               children: [
                 Container(
-                    child: Lottie.asset('assets/images/dog-car-ride.json',
-                        repeat: true)),
+                  child: Lottie.asset('assets/images/dog-car-ride.json',
+                      repeat: true,
+                      ),
+                ),
                 const Padding(
                   padding: EdgeInsets.only(bottom: 16.0),
                   child: Text(

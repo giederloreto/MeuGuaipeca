@@ -25,13 +25,13 @@ class _AdoptionViewState extends State<AdoptionView> {
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (_, index) => GuaipecaMyPetCard(
-          height: 80,
-          width: 80,
+            height: 80,
+            width: 80,
             image:
                 'https://media.istockphoto.com/photos/happy-dog-puppy-winking-an-eye-and-smiling-on-colored-blue-backgorund-picture-id1279308976?s=612x612',
             name: 'Otto',
             age: '1'),
-        itemCount: 4,
+        itemCount: 1,
       ),
       bottomNavigationBar: const GuaipecaBottomBar(indexBottom: 2),
     );
