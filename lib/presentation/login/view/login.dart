@@ -46,9 +46,10 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
               alignment: Alignment.bottomCenter,
               children: [
                 Container(
-                  child: Lottie.asset('assets/images/dog-car-ride.json',
-                      repeat: true,
-                      ),
+                  child: Lottie.asset(
+                    'assets/images/dog-car-ride.json',
+                    repeat: true,
+                  ),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(bottom: 16.0),
@@ -168,7 +169,9 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
             Padding(
               padding: const EdgeInsets.only(top: 8, left: 24.0, right: 24),
               child: ImageTextButton(
-                onPressed: () {},
+                onPressed: () {
+                  _loginViewModel.signInWithGoogle();
+                },
                 text: Text(
                   Strings.strings.loginWithGoogle,
                   style: const TextStyle(
