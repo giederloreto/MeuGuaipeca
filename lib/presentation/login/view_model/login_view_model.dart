@@ -17,6 +17,7 @@ class LoginViewModel extends ChangeNotifier {
       await _loginBusiness
           .login(emailController.text, passwordController.text)
           .then((value) => Navigator.pushNamed(context, RoutesNames.HOME));
+
     } catch (e) {
       log(e.toString());
     }

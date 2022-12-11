@@ -20,7 +20,7 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
   late final AnimationController _controller;
   bool _isVisible = false;
   bool isLoading = false;
-
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   void initState() {
     super.initState();
@@ -36,6 +36,7 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -64,163 +65,182 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 24, left: 24.0, right: 24),
-              child: TextFormField(
-                controller: _loginViewModel.emailController,
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.all(8),
-                  filled: true,
-                  fillColor: Colors.white70,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  prefixIcon: const Icon(
-                    Icons.mail,
-                    color: Colors.black,
-                  ),
-                  label: Text(
-                    Strings.strings.strEmail,
-                    style: const TextStyle(
-                        fontFamily: 'Quicksand',
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 24, left: 24.0, right: 24),
-              child: TextFormField(
-                controller: _loginViewModel.passwordController,
-                keyboardType: TextInputType.text,
-                obscureText: !_isVisible,
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.all(8),
-                  filled: true,
-                  fillColor: Colors.white70,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  suffixIcon: IconButton(
-                      color: Colors.black,
-                      onPressed: () {
-                        setState(() {
-                          _isVisible = !_isVisible;
-                        });
+            Container(
+              height: size.height * 0.55,
+              color: Colors.yellow,
+              padding: const EdgeInsets.all(24),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    TextFormField(
+                      controller: _loginViewModel.emailController,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Por favor preencha o email";
+                        } else if (!value.contains('@')) {
+                          return "Adiciona @";
+                        }
                       },
-                      icon: _isVisible
-                          ? const Icon(
-                              Icons.visibility,
-                              color: Colors.black,
-                            )
-                          : const Icon(
-                              Icons.visibility_off,
-                              color: Colors.black,
-                            )),
-                  label: Text(
-                    Strings.strings.senha,
-                    style: TextStyle(
-                      fontFamily: 'Quicksand',
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 24, left: 24.0, right: 24),
-              child: SizedBox(
-                height: 50,
-                child: Card(
-                  elevation: 8,
-                  clipBehavior: Clip.hardEdge,
-                  child: InkWell(
-                    onTap: () async {
-                      try {
-                        await _loginViewModel.login(context);
-
-                        log("Logou VIEW");
-                      } on Exception catch (e) {
-                        log("Não LOGOU porque? $e");
-                        Navigator.pushNamed(
-                            context, RoutesNames.FORGETPASSWORD);
-                      }
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const SizedBox(height: 16),
-                        Text(
-                          Strings.strings.login,
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.all(8),
+                        filled: true,
+                        fillColor: Colors.white70,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        prefixIcon: const Icon(
+                          Icons.mail,
+                          color: Colors.black,
+                        ),
+                        label: Text(
+                          Strings.strings.strEmail,
                           style: const TextStyle(
                               fontFamily: 'Quicksand',
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
                         ),
+                      ),
+                    ),
+                    TextFormField(
+                      controller: _loginViewModel.passwordController,
+                       validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Por favor preencha a senha";
+                        } 
+                        
+                      },
+                      keyboardType: TextInputType.text,
+                      obscureText: !_isVisible,
+                      decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.all(8),
+                        filled: true,
+                        fillColor: Colors.white70,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        suffixIcon: IconButton(
+                            color: Colors.black,
+                            onPressed: () {
+                              setState(() {
+                                _isVisible = !_isVisible;
+                              });
+                            },
+                            icon: _isVisible
+                                ? const Icon(
+                                    Icons.visibility,
+                                    color: Colors.black,
+                                  )
+                                : const Icon(
+                                    Icons.visibility_off,
+                                    color: Colors.black,
+                                  )),
+                        label: Text(
+                          Strings.strings.senha,
+                          style: const TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 50,
+                      child: Card(
+                        elevation: 8,
+                        clipBehavior: Clip.hardEdge,
+                        child: InkWell(
+                          onTap: () async {
+                            try {
+                              if (_formKey.currentState!.validate()) {
+                                await _loginViewModel.login(context);
+                                log("Entrou IF");
+                              }
+
+                              log("FORA");
+                            } on Exception catch (e) {
+                              log("Não LOGOU porque? $e");
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const SizedBox(height: 16),
+                              Text(
+                                Strings.strings.login,
+                                style: const TextStyle(
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    ImageTextButton(
+                      onPressed: () {
+                        _loginViewModel.signInWithGoogle();
+                      },
+                      text: Text(
+                        Strings.strings.loginWithGoogle,
+                        style: const TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      path: 'assets/images/google.png',
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          Strings.strings.dontHaveAccount,
+                          style: const TextStyle(
+                              fontFamily: 'Quicksand',
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, RoutesNames.REGISTERCHOOSE);
+                          },
+                          child: Text(Strings.strings.subscribe),
+                        ),
                       ],
                     ),
-                  ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          Strings.strings.forgetPassword,
+                          style: const TextStyle(
+                              fontFamily: 'Quicksand',
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, RoutesNames.FORGETPASSWORD);
+                          },
+                          child: Text(Strings.strings.resetPassword),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 8, left: 24.0, right: 24),
-              child: ImageTextButton(
+            ElevatedButton(
                 onPressed: () {
-                  _loginViewModel.signInWithGoogle();
+                  Navigator.pushNamed(context, RoutesNames.HOME);
                 },
-                text: Text(
-                  Strings.strings.loginWithGoogle,
-                  style: const TextStyle(
-                      fontFamily: 'Quicksand',
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold),
-                ),
-                path: 'assets/images/google.png',
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 24.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    Strings.strings.dontHaveAccount,
-                    style: const TextStyle(
-                        fontFamily: 'Quicksand',
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, RoutesNames.REGISTERCHOOSE);
-                    },
-                    child: Text(Strings.strings.subscribe),
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  Strings.strings.forgetPassword,
-                  style: const TextStyle(
-                      fontFamily: 'Quicksand',
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, RoutesNames.FORGETPASSWORD);
-                  },
-                  child: Text(Strings.strings.resetPassword),
-                ),
-              ],
-            )
+                child: Text('ir Home')),
           ],
         ),
       ),
