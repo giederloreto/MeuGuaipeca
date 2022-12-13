@@ -41,22 +41,10 @@ class _MyPetsViewState extends State<MyPetsView> {
           ),
           GuaipecaMyPetCard(
             image:
-                'https://static3.depositphotos.com/1006075/220/i/600/depositphotos_2201124-stock-photo-lhasa-apso.jpg',
-            name: 'Oliver',
-            age: '5',
+                'https://media.istockphoto.com/id/1212177973/pt/foto/cute-brown-mexican-chihuahua-dog-isolated-on-light-pink-background-outraged-unhappy-dog-looks.jpg?s=612x612&w=is&k=20&c=2OMhlajWJPOVWxtkCU06cotXLX1HYQHNIBLDpxdX578=',
+            name: 'Fred',
+            age: '2',
           ),
-          GuaipecaMyPetCard(
-            image:
-                'https://static3.depositphotos.com/1006075/220/i/600/depositphotos_2201124-stock-photo-lhasa-apso.jpg',
-            name: 'Oliver',
-            age: '5',
-          ),
-          GuaipecaMyPetCard(
-            image:
-                'https://static3.depositphotos.com/1006075/220/i/600/depositphotos_2201124-stock-photo-lhasa-apso.jpg',
-            name: 'Oliver',
-            age: '5',
-          )
         ],
       ),
       floatingActionButton: FloatingActionButton(

@@ -40,14 +40,16 @@ class _HomeViewState extends State<HomeView> {
               )),
         ],
       ),
-      body: ListView(children: const [
-        GuaipecaCardNew(
-          image:
-              'https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y',
-          title: 'O Inverno para seu Pet',
-          authorImage:
-              'https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY',
-          authorName: 'Gieder Loreto',
+      body: ListView(children:  [
+        GestureDetector(onTap: (){ },
+          child: GuaipecaCardNew(
+            image:
+                'https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y',
+            title: 'O Inverno para seu Pet',
+            authorImage:
+                'https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY',
+            authorName: 'Gieder Loreto',
+          ),
         ),
         GuaipecaCardNew(
           image:
