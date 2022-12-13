@@ -40,8 +40,11 @@ class _HomeViewState extends State<HomeView> {
               )),
         ],
       ),
-      body: ListView(children:  [
-        GestureDetector(onTap: (){ },
+      body: ListView(children: [
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, RoutesNames.FEED);
+          },
           child: GuaipecaCardNew(
             image:
                 'https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y',

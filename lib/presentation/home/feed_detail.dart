@@ -20,12 +20,56 @@ class _FeedDetailState extends State<FeedDetail> {
         child: Column(
           children: [
             Container(
+              padding: EdgeInsets.only(top: 8, bottom: 8),
+              child: GuaipecaTextDefault(
+                text: 'O inverno para seu Pet',
+                fontSize: 24,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 24, right: 24, bottom: 8),
+              child: GuaipecaTextDefault(
+                  text:
+                      'Dicas para cuidado com seu amigo pet durante a estação mais fria do ano.',
+                  fontSize: 14),
+            ),
+            Container(
               child: Image.network(
                   'https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y'),
             ),
-            GuaipecaTextDefault(text: 'O inverno para Pet', fontSize: 24,),
-
-            GuaipecaTextDefault(text:Strings.strings.forgetPassword , fontSize: 14),
+            Container(
+              padding: EdgeInsets.only(left: 24, top: 24),
+              child: Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(48.0),
+                    child: Image.network(
+                      'https://i.picsum.photos/id/1005/5760/3840.jpg?hmac=2acSJCOwz9q_dKtDZdSB-OIK1HUcwBeXco_RMMTUgfY',
+                      fit: BoxFit.cover,
+                      height: 25,
+                      width: 25,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  GuaipecaTextDefault(
+                    text: 'Gieder Loreto',
+                    fontSize: 14,
+                  ),
+                  Container(
+                      padding: EdgeInsets.only(left: 180),
+                      child: Icon(Icons.share))
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(24),
+              child: GuaipecaTextDefault(
+                  text: Strings.strings.feed,
+                  fontSize: 14,
+                  textAlign: TextAlign.justify),
+            ),
           ],
         ),
       ),

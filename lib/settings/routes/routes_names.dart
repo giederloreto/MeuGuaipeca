@@ -10,4 +10,5 @@ class RoutesNames {
   static String ADOPTION = '/adoption';
   static String STORE = '/store';
   static String PROFILE = '/profile';
+  static String FEED = '/feed';
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/presentation/adoption/adoption_view/adoption_view.dart';
 import 'package:meu_guaipeca/presentation/forget_password/view/forget_password_view.dart';
+import 'package:meu_guaipeca/presentation/home/feed_detail.dart';
 import 'package:meu_guaipeca/presentation/home/home_view.dart';
 import 'package:meu_guaipeca/presentation/login/view/login.dart';
 import 'package:meu_guaipeca/presentation/my_pets/my_pets_view/my_pets_view.dart';
@@ -26,5 +27,6 @@ class Routes {
     RoutesNames.ADOPTION: (context) => const AdoptionView(),
     RoutesNames.STORE: (context) => const StoreView(),
     RoutesNames.PROFILE: (context) => const ProfileView(),
+    RoutesNames.FEED: (context) => const FeedDetail(),
   };
 }
