@@ -11,4 +11,5 @@ class RoutesNames {
   static String STORE = '/store';
   static String PROFILE = '/profile';
   static String FEED = '/feed';
+  static String MYPETDETAIL = '/mypetdetail';
 }
