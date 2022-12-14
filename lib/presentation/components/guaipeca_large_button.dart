@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class GuaipecaLargeButton extends StatelessWidget {
   final String label;
   final Function()? onTap;
-  const GuaipecaLargeButton({required this.label, this.onTap, Key? key})
+  final Color? color;
+  const GuaipecaLargeButton(
+      {required this.label, this.onTap, this.color, Key? key})
       : super(key: key);
 
   @override
@@ -11,6 +13,7 @@ class GuaipecaLargeButton extends StatelessWidget {
     return SizedBox(
       height: 50,
       child: Card(
+        color: color,
         elevation: 8,
         clipBehavior: Clip.hardEdge,
         child: InkWell(
