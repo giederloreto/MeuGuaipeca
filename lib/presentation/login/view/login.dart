@@ -66,8 +66,8 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
               ],
             ),
             Container(
+              color: Colors.blueGrey[100],
               height: size.height * 0.55,
-              color: Colors.yellow,
               padding: const EdgeInsets.all(24),
               child: Form(
                 key: _formKey,
@@ -106,11 +106,10 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
                     ),
                     TextFormField(
                       controller: _loginViewModel.passwordController,
-                       validator: (value) {
+                      validator: (value) {
                         if (value == null || value.isEmpty) {
                           return "Por favor preencha a senha";
-                        } 
-                        
+                        }
                       },
                       keyboardType: TextInputType.text,
                       obscureText: !_isVisible,
@@ -181,18 +180,21 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
                         ),
                       ),
                     ),
-                    ImageTextButton(
-                      onPressed: () {
-                        _loginViewModel.signInWithGoogle();
-                      },
-                      text: Text(
-                        Strings.strings.loginWithGoogle,
-                        style: const TextStyle(
-                            fontFamily: 'Quicksand',
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
+                    Container(
+                      color: Colors.blueGrey[100],
+                      child: ImageTextButton(
+                        onPressed: () {
+                          _loginViewModel.signInWithGoogle();
+                        },
+                        text: Text(
+                          Strings.strings.loginWithGoogle,
+                          style: const TextStyle(
+                              fontFamily: 'Quicksand',
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        path: 'assets/images/google.png',
                       ),
-                      path: 'assets/images/google.png',
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -209,7 +211,10 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
                             Navigator.pushNamed(
                                 context, RoutesNames.REGISTERCHOOSE);
                           },
-                          child: Text(Strings.strings.subscribe),
+                          child: Text(
+                            Strings.strings.subscribe,
+                            style: TextStyle(color: Colors.blue[300]),
+                          ),
                         ),
                       ],
                     ),
@@ -228,7 +233,10 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
                             Navigator.pushNamed(
                                 context, RoutesNames.FORGETPASSWORD);
                           },
-                          child: Text(Strings.strings.resetPassword),
+                          child: Text(
+                            Strings.strings.resetPassword,
+                            style: TextStyle(color: Colors.blue[300]),
+                          ),
                         ),
                       ],
                     )
