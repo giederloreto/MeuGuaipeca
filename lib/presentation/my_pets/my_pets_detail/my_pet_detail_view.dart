@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meu_guaipeca/presentation/components/guaipeca_add_medicine.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_appbar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_default.dart';
@@ -44,15 +45,16 @@ class _MyPetDetailState extends State<MyPetDetail> {
                   }),
             ),
             Container(
-              padding: EdgeInsets.only(left: 24, right: 24, top: 8, bottom: 8),
+              padding:
+                  const EdgeInsets.only(left: 24, right: 24, top: 8, bottom: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GuaipecaTextDefault(
+                  const GuaipecaTextDefault(
                     text: 'Oliver',
                     fontSize: 18,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.male,
                     size: 32,
                   )
@@ -60,15 +62,16 @@ class _MyPetDetailState extends State<MyPetDetail> {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(left: 24, right: 24, top: 8, bottom: 8),
+              padding:
+                  const EdgeInsets.only(left: 24, right: 24, top: 8, bottom: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GuaipecaTextDefault(
+                  const GuaipecaTextDefault(
                     text: 'Lhasa Apso',
                     fontSize: 18,
                   ),
-                  GuaipecaTextDefault(
+                  const GuaipecaTextDefault(
                     text: '4 anos',
                     fontSize: 18,
                   ),
@@ -76,76 +79,152 @@ class _MyPetDetailState extends State<MyPetDetail> {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(left: 24, right: 24, top: 8, bottom: 8),
+              padding:
+                  const EdgeInsets.only(left: 24, right: 24, top: 8, bottom: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Icon(Icons.location_on),
-                  GuaipecaTextDefault(
+                  const Icon(Icons.location_on),
+                  const GuaipecaTextDefault(
                     text: 'Bagé-RS',
                     fontSize: 14,
                   ),
                 ],
               ),
             ),
-            Container(
-              height: 250,
-              color: Colors.yellow,
-              padding: EdgeInsets.only(left: 24, right: 24, top: 8, bottom: 8),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GuaipecaTextDefault(
-                        text: 'Meus Medicamentos',
-                        fontSize: 14,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.87,
-                        height: 50,
-                        child: GuaipecaTextFormField(label: 'Nome'),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.30,
-                        height: 50,
-                        child: GuaipecaTextFormField(label: 'Data'),
-                      ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.30,
-                        height: 50,
-                        child: GuaipecaTextFormField(label: 'Próxima'),
-                      ),
-                      Container(
-                          width: 85,
-                          child: GuaipecaLargeButton(
-                            label: 'Salvar',
-                            color: Colors.blue,
-                          ))
-                    ],
-                  )
-                ],
-              ),
+            GuaipecaLargeButton(
+              label: 'Adicionar Medicamentos',
+              onTap: () {
+                addMedicine();
+              },
             ),
+            const GuaipecaTextDefault(
+              padding: EdgeInsets.only(top: 16),
+              text: 'Medicamentos Aplicados:',
+              fontSize: 12,
+            ),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GuaipecaTextDefault(
+                        padding: EdgeInsets.only(top: 16, left: 16, right: 16),
+                        text: 'Nome Medicamento',
+                        fontSize: 10),
+                    GuaipecaTextDefault(
+                        padding: EdgeInsets.only(top: 16, right: 16),
+                        text: 'Data aplicada',
+                        fontSize: 10),
+                    GuaipecaTextDefault(
+                        padding: EdgeInsets.only(top: 16, left: 16, right: 32),
+                        text: 'Próxima Aplicação',
+                        fontSize: 10),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    GuaipecaTextDefault(
+                        color: Colors.red[300],
+                        padding: EdgeInsets.only(top: 16, left: 16, right: 16),
+                        text: 'Antivirose',
+                        fontSize: 10),
+                    GuaipecaTextDefault(
+                        color: Colors.red[300],
+                        padding: EdgeInsets.only(
+                          top: 16,
+                          left: 64,
+                        ),
+                        text: '05/09/2022',
+                        fontSize: 10),
+                    GuaipecaTextDefault(
+                      color: Colors.red,
+                      padding: EdgeInsets.only(
+                        top: 16,
+                        left: 54,
+                      ),
+                      text: '04/03/2023',
+                      fontSize: 12,
+                    ),
+                    IconButton(
+                      padding: EdgeInsets.only(right: 16),
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.delete,
+                        size: 16,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GuaipecaTextDefault(
+                        color: Colors.red[300],
+                        padding: EdgeInsets.only(left: 16, right: 16),
+                        text: 'Vermifugo',
+                        fontSize: 10),
+                    GuaipecaTextDefault(
+                        color: Colors.red[300],
+                        padding: EdgeInsets.only(
+                          left: 64,
+                        ),
+                        text: '21/12/2022',
+                        fontSize: 10),
+                    GuaipecaTextDefault(
+                        color: Colors.red,
+                        padding: EdgeInsets.only(
+                          left: 54,
+                        ),
+                        text: '20/03/2023',
+                        fontSize: 12),
+                    IconButton(
+                      padding: EdgeInsets.only(right: 16),
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.delete,
+                        size: 16,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            )
           ],
         ),
       ),
     );
+  }
+
+  addMedicine() {
+    return showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+              title: Center(child: const Text('Medicamento')),
+              content: Container(
+                height: 250,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const GuaipecaTextFormField(
+                      label: "Nome do Medicamento",
+                    ),
+                    const GuaipecaTextFormField(
+                      label: "Data",
+                    ),
+                    const GuaipecaTextFormField(
+                      label: "próxima aplicação",
+                    ),
+                    GuaipecaLargeButton(
+                      label: 'Salvar',
+                      onTap: () {},
+                    )
+                  ],
+                ),
+              ),
+            ));
   }
 }
