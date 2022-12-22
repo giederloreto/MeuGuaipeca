@@ -28,17 +28,7 @@ class _HomeViewState extends State<HomeView> {
           fontSize: 18,
           color: Colors.black,
         ),
-        actions: [
-          IconButton(
-              onPressed: () async {
-                await FirebaseAuth.instance.signOut();
-                Navigator.pushNamed(context, RoutesNames.LOGIN);
-              },
-              icon: const Icon(
-                Icons.logout,
-                color: Colors.black,
-              )),
-        ],
+      
       ),
       body: ListView(children: [
         GestureDetector(
