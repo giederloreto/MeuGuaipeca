@@ -146,7 +146,7 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    /* SizedBox(
                       height: 50,
                       child: Card(
                         elevation: 8,
@@ -179,12 +179,14 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
                           ),
                         ),
                       ),
-                    ),
+                    ), */
                     Container(
                       color: Colors.blueGrey[100],
                       child: ImageTextButton(
-                        onPressed: () {
-                          _loginViewModel.signInWithGoogle();
+                        onPressed: () async {
+                          await _loginViewModel.signInWithGoogle().then(
+                              (value) => Navigator.pushNamedAndRemoveUntil(
+                                  context, RoutesNames.HOME, (route) => false));
                         },
                         text: Text(
                           Strings.strings.loginWithGoogle,

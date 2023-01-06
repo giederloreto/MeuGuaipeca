@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_appbar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_bottom_bar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
@@ -122,8 +123,12 @@ class _ProfileViewState extends State<ProfileView> {
             ),
             child: GuaipecaLargeButton(
               label: 'SAIR DO APP',
-              onTap: () async {await FirebaseAuth.instance.signOut();
-                Navigator.pushNamed(context, RoutesNames.LOGIN);},
+              onTap: () async {
+                await FirebaseAuth.instance.signOut();
+                final _googleSignIn = GoogleSignIn();
+                await _googleSignIn.signOut();
+                Navigator.pushNamed(context, RoutesNames.LOGIN);
+              },
             ),
           ),
         ],
