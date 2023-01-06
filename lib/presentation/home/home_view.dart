@@ -28,7 +28,6 @@ class _HomeViewState extends State<HomeView> {
           fontSize: 18,
           color: Colors.black,
         ),
-      
       ),
       body: ListView(children: [
         GestureDetector(
@@ -64,11 +63,13 @@ class _HomeViewState extends State<HomeView> {
       bottomNavigationBar: const GuaipecaBottomBar(
         indexBottom: 0,
       ),
-      /* floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, RoutesNames.FEEDCREATE);
+        },
         child: Icon(Icons.add),
-        backgroundColor: Colors.black12,
-      ), */
+        backgroundColor: Colors.lightBlue[200],
+      ),
     );
   }
 }
