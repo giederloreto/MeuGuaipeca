@@ -11,6 +11,7 @@ import 'package:meu_guaipeca/presentation/registration/view/register_cpf_view.da
 import 'package:meu_guaipeca/presentation/splash/splash_view.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
+import '../../presentation/home/create_feed.dart';
 import '../../presentation/my_pets/my_pets_detail/my_pet_detail_view.dart';
 import '../../presentation/profile/profile_view/profile_view.dart';
 import '../../presentation/store/store_view/store_view.dart';
@@ -30,5 +31,6 @@ class Routes {
     RoutesNames.PROFILE: (context) => const ProfileView(),
     RoutesNames.FEED: (context) => const FeedDetail(),
     RoutesNames.MYPETDETAIL: (context) => const MyPetDetail(),
+    RoutesNames.FEEDCREATE: (context) => const CreateFeed(),
   };
 }

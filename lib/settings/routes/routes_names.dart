@@ -12,4 +12,5 @@ class RoutesNames {
   static String PROFILE = '/profile';
   static String FEED = '/feed';
   static String MYPETDETAIL = '/mypetdetail';
+  static String FEEDCREATE = '/createfeed';
 }
