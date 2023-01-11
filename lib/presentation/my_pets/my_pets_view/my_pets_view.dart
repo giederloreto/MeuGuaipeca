@@ -54,7 +54,9 @@ class _MyPetsViewState extends State<MyPetsView> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, RoutesNames.CREATEMYPET);
+        },
         backgroundColor: Colors.lightBlue[200],
         child: const Icon(Icons.add),
       ),
