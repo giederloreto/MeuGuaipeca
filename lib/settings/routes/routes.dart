@@ -9,6 +9,7 @@ import 'package:meu_guaipeca/presentation/registration/view/register_choose_view
 import 'package:meu_guaipeca/presentation/registration/view/register_cnpj_view.dart';
 import 'package:meu_guaipeca/presentation/registration/view/register_cpf_view.dart';
 import 'package:meu_guaipeca/presentation/splash/splash_view.dart';
+import 'package:meu_guaipeca/presentation/store/store_view/create_store_view.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 import '../../presentation/adoption/create_adoption/create_adoption_view/create_adoption_view.dart';
@@ -36,5 +37,6 @@ class Routes {
     RoutesNames.FEEDCREATE: (context) => const CreateFeed(),
     RoutesNames.CREATEMYPET: (context) => const CreateMyPet(),
     RoutesNames.CREATEADOPTION: (context) => const CreateAdoptionView(),
+    RoutesNames.CREATESTORE: (context) => const CreateStoreView(),
   };
 }
