@@ -11,6 +11,7 @@ import 'package:meu_guaipeca/presentation/registration/view/register_cpf_view.da
 import 'package:meu_guaipeca/presentation/splash/splash_view.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
+import '../../presentation/adoption/create_adoption/create_adoption_view/create_adoption_view.dart';
 import '../../presentation/home/create_feed.dart';
 import '../../presentation/my_pets/create_my_pet/create_my_pet.dart';
 import '../../presentation/my_pets/my_pets_detail/my_pet_detail_view.dart';
@@ -34,5 +35,6 @@ class Routes {
     RoutesNames.MYPETDETAIL: (context) => const MyPetDetail(),
     RoutesNames.FEEDCREATE: (context) => const CreateFeed(),
     RoutesNames.CREATEMYPET: (context) => const CreateMyPet(),
+    RoutesNames.CREATEADOPTION: (context) => const CreateAdoptionView(),
   };
 }

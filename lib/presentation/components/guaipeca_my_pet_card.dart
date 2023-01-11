@@ -7,19 +7,23 @@ class GuaipecaMyPetCard extends StatelessWidget {
   final String age;
   final double? width;
   final double? height;
+  final double? fontSize;
+  final bool? dontShowCity;
   const GuaipecaMyPetCard(
       {required this.image,
       required this.name,
       required this.age,
       this.height,
       this.width,
+      this.fontSize,
+      this.dontShowCity,
       Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(16),
+      margin: const EdgeInsets.all(8),
       height: 250,
       width: 380,
       padding: const EdgeInsets.all(16),
@@ -50,27 +54,39 @@ class GuaipecaMyPetCard extends StatelessWidget {
           ),
           Row(
             children: [
-              const GuaipecaTextDefault(
+              GuaipecaTextDefault(
                 text: 'Nome: ',
-                fontSize: 18,
+                fontSize: fontSize ?? 18,
               ),
               GuaipecaTextDefault(
                 text: name,
-                fontSize: 18,
+                fontSize: fontSize ?? 18,
               ),
             ],
           ),
           Row(
             children: [
-              const GuaipecaTextDefault(
+              GuaipecaTextDefault(
                 text: 'Idade: ',
-                fontSize: 18,
+                fontSize: fontSize ?? 18,
               ),
               GuaipecaTextDefault(
                 text: age == '1' ? age + ' ano' : age + ' anos',
-                fontSize: 18,
+                fontSize: fontSize ?? 18,
               ),
             ],
+          ),
+          Offstage(
+            offstage: dontShowCity ?? true,
+            child: Row(
+              children: [
+                const Icon(Icons.location_on),
+                GuaipecaTextDefault(
+                  text: 'Candiota-RS',
+                  fontSize: fontSize ?? 18,
+                ),
+              ],
+            ),
           ),
         ],
       ),

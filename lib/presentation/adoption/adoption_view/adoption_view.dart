@@ -3,6 +3,7 @@ import 'package:meu_guaipeca/presentation/components/guaipeca_appbar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_bottom_bar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_my_pet_card.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_default.dart';
+import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 class AdoptionView extends StatefulWidget {
   const AdoptionView({Key? key}) : super(key: key);
@@ -16,7 +17,9 @@ class _AdoptionViewState extends State<AdoptionView> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, RoutesNames.CREATEADOPTION);
+        },
         child: Icon(Icons.add),
         backgroundColor: Colors.lightBlue[200],
       ),
@@ -34,13 +37,16 @@ class _AdoptionViewState extends State<AdoptionView> {
           onTap: () {
             adoption();
           },
-          child: GuaipecaMyPetCard(
-              height: 80,
-              width: 80,
-              image:
-                  'https://media.istockphoto.com/photos/happy-dog-puppy-winking-an-eye-and-smiling-on-colored-blue-backgorund-picture-id1279308976?s=612x612',
-              name: 'Otto',
-              age: '1'),
+          child: const GuaipecaMyPetCard(
+            height: 80,
+            width: 150,
+            image:
+                'https://media.istockphoto.com/photos/happy-dog-puppy-winking-an-eye-and-smiling-on-colored-blue-backgorund-picture-id1279308976?s=612x612',
+            name: 'Otto',
+            age: '1',
+            fontSize: 14,
+            dontShowCity: false,
+          ),
         ),
         itemCount: 1,
       ),
