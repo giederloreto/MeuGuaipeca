@@ -22,7 +22,10 @@ class _HomeViewState extends State<HomeView> {
       extendBodyBehindAppBar: false,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue[200],
-        leading: const Text(''),
+        leading: Icon(
+          Icons.notifications,
+          color: Colors.black,
+        ),
         title: const GuaipecaTextDefault(
           text: 'Bem Vindo ao Meu Guaipeca',
           fontSize: 18,

@@ -58,8 +58,17 @@ class _FeedDetailState extends State<FeedDetail> {
                     fontSize: 14,
                   ),
                   Container(
-                      padding: EdgeInsets.only(left: 180),
-                      child: Icon(Icons.share))
+                    padding: EdgeInsets.only(left: 64),
+                    child: Icon(Icons.share),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(left: 32),
+                    child: Icon(Icons.delete),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(left: 32),
+                    child: Icon(Icons.favorite, color: Colors.red),
+                  ),
                 ],
               ),
             ),

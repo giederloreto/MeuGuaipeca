@@ -89,6 +89,14 @@ class _MyPetDetailState extends State<MyPetDetail> {
                     text: 'Bagé-RS',
                     fontSize: 14,
                   ),
+                  Container(
+                    padding: EdgeInsets.only(left: 172),
+                    child: Icon(Icons.edit),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(left: 32),
+                    child: Icon(Icons.delete),
+                  ),
                 ],
               ),
             ),
@@ -106,18 +114,18 @@ class _MyPetDetailState extends State<MyPetDetail> {
             Column(
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     GuaipecaTextDefault(
                         padding: EdgeInsets.only(top: 16, left: 16, right: 16),
-                        text: 'Nome Medicamento',
+                        text: 'Medicamento',
                         fontSize: 10),
                     GuaipecaTextDefault(
-                        padding: EdgeInsets.only(top: 16, right: 16),
+                        padding: EdgeInsets.only(top: 16, left: 16, right: 16),
                         text: 'Data aplicada',
                         fontSize: 10),
                     GuaipecaTextDefault(
-                        padding: EdgeInsets.only(top: 16, left: 16, right: 32),
+                        padding: EdgeInsets.only(top: 16, left: 16, right: 16),
                         text: 'Próxima Aplicação',
                         fontSize: 10),
                   ],
@@ -135,7 +143,7 @@ class _MyPetDetailState extends State<MyPetDetail> {
                         color: Colors.red[300],
                         padding: EdgeInsets.only(
                           top: 16,
-                          left: 64,
+                          left: 28,
                         ),
                         text: '05/09/2022',
                         fontSize: 10),
@@ -143,13 +151,23 @@ class _MyPetDetailState extends State<MyPetDetail> {
                       color: Colors.red,
                       padding: EdgeInsets.only(
                         top: 16,
-                        left: 54,
+                        left: 34,
                       ),
-                      text: '04/03/2023',
+                      text: '01/03/2023',
                       fontSize: 12,
                     ),
                     IconButton(
-                      padding: EdgeInsets.only(right: 16),
+                      padding: EdgeInsets.all(0),
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.edit,
+                        size: 16,
+                      ),
+                    ),
+                    IconButton(
+                      padding: EdgeInsets.only(
+                          right:
+                              24), //                    padding: EdgeInsets.only(right: 16),
                       onPressed: () {},
                       icon: Icon(
                         Icons.delete,
@@ -160,29 +178,42 @@ class _MyPetDetailState extends State<MyPetDetail> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     GuaipecaTextDefault(
                         color: Colors.red[300],
-                        padding: EdgeInsets.only(left: 16, right: 16),
+                        padding: EdgeInsets.only(top: 16, left: 16, right: 16),
                         text: 'Vermifugo',
                         fontSize: 10),
                     GuaipecaTextDefault(
                         color: Colors.red[300],
                         padding: EdgeInsets.only(
-                          left: 64,
+                          top: 16,
+                          left: 28,
                         ),
-                        text: '21/12/2022',
+                        text: '05/12/2022',
                         fontSize: 10),
                     GuaipecaTextDefault(
-                        color: Colors.red,
-                        padding: EdgeInsets.only(
-                          left: 54,
-                        ),
-                        text: '20/03/2023',
-                        fontSize: 12),
+                      color: Colors.red,
+                      padding: EdgeInsets.only(
+                        top: 16,
+                        left: 34,
+                      ),
+                      text: '04/03/2023',
+                      fontSize: 12,
+                    ),
                     IconButton(
-                      padding: EdgeInsets.only(right: 16),
+                      padding: EdgeInsets.all(0),
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.edit,
+                        size: 16,
+                      ),
+                    ),
+                    IconButton(
+                      padding: EdgeInsets.only(
+                          right:
+                              24), //                    padding: EdgeInsets.only(right: 16),
                       onPressed: () {},
                       icon: Icon(
                         Icons.delete,
@@ -190,7 +221,7 @@ class _MyPetDetailState extends State<MyPetDetail> {
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             )
           ],

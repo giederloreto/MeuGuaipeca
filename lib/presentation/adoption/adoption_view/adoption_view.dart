@@ -35,7 +35,8 @@ class _AdoptionViewState extends State<AdoptionView> {
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (_, index) => GestureDetector(
           onTap: () {
-            adoption();
+            //adoption;
+            Navigator.pushNamed(context, RoutesNames.ADOPTIONDETAIL);
           },
           child: const GuaipecaMyPetCard(
             height: 80,
