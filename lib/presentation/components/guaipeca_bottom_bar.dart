@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_icon.dart';
+import 'package:meu_guaipeca/settings/constants/constants.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 class GuaipecaBottomBar extends StatefulWidget {
@@ -20,10 +21,9 @@ class _GuaipecaBottomBarState extends State<GuaipecaBottomBar> {
         topRight: Radius.circular(30.0),
       ),
       child: BottomNavigationBar(
-        
         selectedLabelStyle: const TextStyle(
             fontFamily: 'Quicksand', fontSize: 14, fontWeight: FontWeight.bold),
-        selectedItemColor: Colors.lightBlue[500],
+        selectedItemColor: secundaryColor,
         selectedFontSize: 30,
         backgroundColor: Colors.white70,
         elevation: 5,

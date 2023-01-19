@@ -4,6 +4,7 @@ import 'package:meu_guaipeca/presentation/components/guaipeca_appbar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_default.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_form_field.dart';
+import 'package:meu_guaipeca/settings/constants/constants.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
@@ -23,7 +24,7 @@ class _MyPetDetailState extends State<MyPetDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue[50],
+      backgroundColor: terciaryColor,
       appBar: const GuaipecaAppBar(
         title: 'Meu Pet',
       ),

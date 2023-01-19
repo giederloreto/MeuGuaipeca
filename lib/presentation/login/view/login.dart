@@ -79,7 +79,7 @@ class _LoginViewState extends State<LoginView> {
                       return Lottie.asset(
                           pathGiftLogin); //Lottie.asset('assets/images/dog-car-ride.json');
                     } else {
-                      return  Center(
+                      return Center(
                           child:
                               CircularProgressIndicator()); //const Center(child: CircularProgressIndicator());
                     }
@@ -248,7 +248,7 @@ class _LoginViewState extends State<LoginView> {
                           },
                           child: Text(
                             Strings.strings.subscribe,
-                            style: TextStyle(color: Colors.blue[300]),
+                            style: const TextStyle(color: primaryColor),
                           ),
                         ),
                       ],
@@ -270,7 +270,7 @@ class _LoginViewState extends State<LoginView> {
                           },
                           child: Text(
                             Strings.strings.resetPassword,
-                            style: TextStyle(color: Colors.blue[300]),
+                            style: TextStyle(color: primaryColor),
                           ),
                         ),
                       ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_default.dart';
+import 'package:meu_guaipeca/settings/constants/constants.dart';
 
 class GuaipecaAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -11,7 +12,7 @@ class GuaipecaAppBar extends StatelessWidget implements PreferredSizeWidget {
     return PreferredSize(
       preferredSize: const Size.fromHeight(40),
       child: AppBar(
-        backgroundColor: Colors.lightBlue[200],
+        backgroundColor: primaryColor,
         title: GuaipecaTextDefault(
           text: title,
           fontSize: 18,

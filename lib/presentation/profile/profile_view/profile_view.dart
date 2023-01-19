@@ -5,6 +5,7 @@ import 'package:meu_guaipeca/presentation/components/guaipeca_appbar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_bottom_bar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_default.dart';
+import 'package:meu_guaipeca/settings/constants/constants.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 class ProfileView extends StatefulWidget {
@@ -20,7 +21,7 @@ class _ProfileViewState extends State<ProfileView> {
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: false,
-      backgroundColor: Colors.lightBlue[50],
+      backgroundColor: terciaryColor,
       body: Column(
         children: [
           Stack(
@@ -28,7 +29,7 @@ class _ProfileViewState extends State<ProfileView> {
             children: [
               Container(
                 height: 200,
-                color: Colors.blueAccent,
+                color: secundaryColor,
               ),
               const SizedBox(
                 height: 150,

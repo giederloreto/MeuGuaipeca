@@ -3,6 +3,7 @@ import 'package:meu_guaipeca/presentation/components/guaipeca_appbar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_bottom_bar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_my_pet_card.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_default.dart';
+import 'package:meu_guaipeca/settings/constants/constants.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 class AdoptionView extends StatefulWidget {
@@ -21,11 +22,11 @@ class _AdoptionViewState extends State<AdoptionView> {
           Navigator.pushNamed(context, RoutesNames.CREATEADOPTION);
         },
         child: Icon(Icons.add),
-        backgroundColor: Colors.lightBlue[200],
+        backgroundColor: primaryColor,
       ),
       extendBody: true,
       extendBodyBehindAppBar: false,
-      backgroundColor: Colors.lightBlue[50],
+      backgroundColor: terciaryColor,
       appBar: const GuaipecaAppBar(
         title: 'Animais para Adoção',
         showBackIcon: false,

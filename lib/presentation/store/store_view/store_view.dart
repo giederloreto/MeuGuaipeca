@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_appbar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_bottom_bar.dart';
+import 'package:meu_guaipeca/settings/constants/constants.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 import '../../components/guaipeca_my_pet_card.dart';
@@ -21,12 +22,12 @@ class _StoreViewState extends State<StoreView> {
           onPressed: () {
             Navigator.pushNamed(context, RoutesNames.CREATESTORE);
           },
-          child:const  Icon(Icons.add),
-          backgroundColor: Colors.lightBlue[200],
+          child: const Icon(Icons.add),
+          backgroundColor: primaryColor,
         ),
         extendBody: true,
         extendBodyBehindAppBar: false,
-        backgroundColor: Colors.lightBlue[50],
+        backgroundColor: terciaryColor,
         appBar: const GuaipecaAppBar(
           title: 'Loja',
           showBackIcon: false,

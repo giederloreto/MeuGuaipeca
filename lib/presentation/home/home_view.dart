@@ -4,6 +4,7 @@ import 'package:meu_guaipeca/meu_guaipeca_app.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_bottom_bar.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_card_news.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_default.dart';
+import 'package:meu_guaipeca/settings/constants/constants.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 class HomeView extends StatefulWidget {
@@ -17,11 +18,11 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue[50],
+      backgroundColor: terciaryColor,
       extendBody: true,
       extendBodyBehindAppBar: false,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue[200],
+        backgroundColor: primaryColor,
         leading: Icon(
           Icons.notifications,
           color: Colors.black,
@@ -71,7 +72,7 @@ class _HomeViewState extends State<HomeView> {
           Navigator.pushNamed(context, RoutesNames.FEEDCREATE);
         },
         child: Icon(Icons.add),
-        backgroundColor: Colors.lightBlue[200],
+        backgroundColor: primaryColor,
       ),
     );
   }
