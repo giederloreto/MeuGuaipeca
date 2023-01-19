@@ -1,12 +1,15 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:lottie/lottie.dart';
 import 'package:meu_guaipeca/presentation/components/image_text_button.dart';
 import 'package:meu_guaipeca/presentation/login/view_model/login_view_model.dart';
 import 'package:meu_guaipeca/settings/Strings/strings.dart';
 import 'package:meu_guaipeca/settings/routes/routes_names.dart';
+
+import '../../../settings/constants/constants.dart';
 
 class LoginView extends StatefulWidget {
   LoginView({Key? key}) : super(key: key);
@@ -15,17 +18,33 @@ class LoginView extends StatefulWidget {
   State<LoginView> createState() => _LoginViewState();
 }
 
-class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
+class _LoginViewState extends State<LoginView> {
   final _loginViewModel = GetIt.I<LoginViewModel>();
   late final AnimationController _controller;
   bool _isVisible = false;
-  bool isLoading = false;
+  bool _isLoading = false;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  late final Future<LottieComposition> _composition;
   @override
   void initState() {
     super.initState();
+    dataLoadFunction();
+    //   _controller = AnimationController(vsync: this);
+    _composition = _loadComposition();
+  }
 
-    _controller = AnimationController(vsync: this);
+  dataLoadFunction() async {
+    setState(() {
+      _isLoading = true;
+    });
+    Future.delayed(const Duration(seconds: 2)).then((value) => setState(() {
+          _isLoading = false;
+        }));
+  }
+
+  Future<LottieComposition> _loadComposition() async {
+    var assetData = await rootBundle.load('assets/images/dog-car-ride.json');
+    return await LottieComposition.fromByteData(assetData);
   }
 
   @override
@@ -37,7 +56,13 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
+    return /* _isLoading
+        ? Container(
+            height: 44,
+            color: Colors.transparent,
+            child: const Center(child: CircularProgressIndicator()))
+        : */
+        Scaffold(
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -46,11 +71,19 @@ class _LoginViewState extends State<LoginView> with TickerProviderStateMixin {
             Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Container(
-                  child: Lottie.asset(
-                    'assets/images/dog-car-ride.json',
-                    repeat: true,
-                  ),
+                FutureBuilder<LottieComposition>(
+                  future: _composition,
+                  builder: (context, snapshot) {
+                    var composition = snapshot.data;
+                    if (composition != null) {
+                      return Lottie.asset(
+                          pathGiftLogin); //Lottie.asset('assets/images/dog-car-ride.json');
+                    } else {
+                      return  Center(
+                          child:
+                              CircularProgressIndicator()); //const Center(child: CircularProgressIndicator());
+                    }
+                  },
                 ),
                 const Padding(
                   padding: EdgeInsets.only(bottom: 16.0),

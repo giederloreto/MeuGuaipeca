@@ -9,6 +9,7 @@ class LoginViewModel extends ChangeNotifier {
   final LoginBusiness _loginBusiness;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  bool isLoad = false;
 
   LoginViewModel(this._loginBusiness);
 
@@ -25,7 +26,7 @@ class LoginViewModel extends ChangeNotifier {
   Future<UserCredential> signInWithGoogle() async {
     // Trigger the authentication flow
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-    
+
     // Obtain the auth details from the request
     final GoogleSignInAuthentication? googleAuth =
         await googleUser?.authentication;
@@ -38,5 +39,13 @@ class LoginViewModel extends ChangeNotifier {
 
     // Once signed in, return the UserCredential
     return await FirebaseAuth.instance.signInWithCredential(credential);
+  }
+
+  Future<bool> isLoadScreen() async {
+    isLoad = true;
+    notifyListeners();
+    isLoad = !isLoad;
+    notifyListeners();
+    return isLoad;
   }
 }

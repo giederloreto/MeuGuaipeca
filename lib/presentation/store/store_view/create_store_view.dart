@@ -18,15 +18,15 @@ class CreateStoreView extends StatelessWidget {
       ),
       backgroundColor: Colors.lightBlue[50],
       body: Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GuaipecaTextFormField(label: 'add Link do seu produto'),
-            SizedBox(
+            const GuaipecaTextFormField(label: 'add Link do seu produto'),
+            const SizedBox(
               height: 20,
             ),
-            GuaipecaLargeButton(label: 'Publicar')
+            const GuaipecaLargeButton(label: 'Publicar')
           ],
         ),
       ),
