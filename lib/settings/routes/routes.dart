@@ -14,7 +14,7 @@ import 'package:meu_guaipeca/settings/routes/routes_names.dart';
 
 import '../../presentation/adoption/adoption_detail/adoption_detail_view.dart';
 import '../../presentation/adoption/create_adoption/create_adoption_view/create_adoption_view.dart';
-import '../../presentation/home/create_feed.dart';
+import '../../presentation/home/create_feed_view/create_feed.dart';
 import '../../presentation/my_pets/create_my_pet/create_my_pet.dart';
 import '../../presentation/my_pets/my_pets_detail/my_pet_detail_view.dart';
 import '../../presentation/profile/profile_view/profile_view.dart';
@@ -39,6 +39,6 @@ class Routes {
     RoutesNames.CREATEMYPET: (context) => const CreateMyPet(),
     RoutesNames.CREATEADOPTION: (context) => const CreateAdoptionView(),
     RoutesNames.CREATESTORE: (context) => const CreateStoreView(),
-    RoutesNames.ADOPTIONDETAIL : (context) => const AdoptionDetailView(),
+    RoutesNames.ADOPTIONDETAIL: (context) => const AdoptionDetailView(),
   };
 }

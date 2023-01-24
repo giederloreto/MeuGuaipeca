@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_form_field.dart';
 
-import '../components/guaipeca_appbar.dart';
+import '../../components/guaipeca_appbar.dart';
 
 class CreateFeed extends StatefulWidget {
   const CreateFeed({Key? key}) : super(key: key);
