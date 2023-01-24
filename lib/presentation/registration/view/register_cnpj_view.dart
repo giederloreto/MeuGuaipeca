@@ -55,7 +55,7 @@ class RegisterCnpjView extends StatelessWidget {
               const GuaipecaSeparate(
                 height: 20,
               ),
-              GuaipecaLargeButton(label: 'Concluir')
+              GuaipecaLargeButton(label: 'Concluir', onTap: () {  },)
             ],
           ),
         ),

@@ -57,9 +57,9 @@ class GuaipecaAddMedicini extends StatelessWidget {
                 ),
                 Container(
                     width: 85,
-                    child: const GuaipecaLargeButton(
+                    child:  GuaipecaLargeButton(
                       label: 'Salvar',
-                      color: Colors.blue,
+                      color: Colors.blue, onTap: () {  },
                     ))
               ],
             )

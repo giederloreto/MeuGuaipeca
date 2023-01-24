@@ -149,7 +149,7 @@ class _CreateAdoptionViewState extends State<CreateAdoptionView> {
                   Padding(
                     padding: const EdgeInsets.only(top: 16, bottom: 16),
                     child: GuaipecaLargeButton(
-                      label: 'Salvar',
+                      label: 'Salvar', onTap: () {  },
                     ),
                   ),
                 ],

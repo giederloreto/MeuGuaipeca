@@ -26,7 +26,7 @@ class CreateStoreView extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const GuaipecaLargeButton(label: 'Publicar')
+             GuaipecaLargeButton(label: 'Publicar', onTap: () {  },)
           ],
         ),
       ),

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class GuaipecaLargeButton extends StatelessWidget {
   final String label;
-  final Function()? onTap;
+  final Function() onTap;
   final Color? color;
   const GuaipecaLargeButton(
-      {required this.label, this.onTap, this.color, Key? key})
+      {required this.label,required this.onTap, this.color, Key? key})
       : super(key: key);
 
   @override

@@ -56,7 +56,7 @@ class _CreateFeedState extends State<CreateFeed> {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 16),
                     child: GuaipecaLargeButton(
-                      label: 'Postar',
+                      label: 'Postar', onTap: () {  },
                     ),
                   ),
                 ],
