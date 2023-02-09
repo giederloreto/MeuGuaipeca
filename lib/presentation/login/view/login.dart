@@ -118,24 +118,25 @@ class _LoginViewState extends State<LoginView> {
                       },
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.all(8),
-                        filled: true,
-                        fillColor: Colors.white70,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        prefixIcon: const Icon(
-                          Icons.mail,
-                          color: Colors.black,
-                        ),
-                        label: Text(
+                          contentPadding: const EdgeInsets.all(8),
+                          filled: true,
+                          fillColor: Colors.white70,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          prefixIcon: const Icon(
+                            Icons.mail,
+                            color: Colors.black,
+                          ),
+                          labelText: Strings.strings
+                              .strEmail /* Text(
                           Strings.strings.strEmail,
                           style: const TextStyle(
                               fontFamily: 'Quicksand',
                               fontSize: 18,
                               fontWeight: FontWeight.bold),
-                        ),
-                      ),
+                        ), */
+                          ),
                     ),
                     TextFormField(
                       controller: _loginViewModel.passwordController,
@@ -147,37 +148,38 @@ class _LoginViewState extends State<LoginView> {
                       keyboardType: TextInputType.text,
                       obscureText: !_isVisible,
                       decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.all(8),
-                        filled: true,
-                        fillColor: Colors.white70,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        suffixIcon: IconButton(
-                            color: Colors.black,
-                            onPressed: () {
-                              setState(() {
-                                _isVisible = !_isVisible;
-                              });
-                            },
-                            icon: _isVisible
-                                ? const Icon(
-                                    Icons.visibility,
-                                    color: Colors.black,
-                                  )
-                                : const Icon(
-                                    Icons.visibility_off,
-                                    color: Colors.black,
-                                  )),
-                        label: Text(
+                          contentPadding: const EdgeInsets.all(8),
+                          filled: true,
+                          fillColor: Colors.white70,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          suffixIcon: IconButton(
+                              color: Colors.black,
+                              onPressed: () {
+                                setState(() {
+                                  _isVisible = !_isVisible;
+                                });
+                              },
+                              icon: _isVisible
+                                  ? const Icon(
+                                      Icons.visibility,
+                                      color: Colors.black,
+                                    )
+                                  : const Icon(
+                                      Icons.visibility_off,
+                                      color: Colors.black,
+                                    )),
+                          labelText: Strings.strings
+                              .senha /* Text(
                           Strings.strings.senha,
                           style: const TextStyle(
                             fontFamily: 'Quicksand',
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
-                        ),
-                      ),
+                        ), */
+                          ),
                     ),
                     /* SizedBox(
                       height: 50,

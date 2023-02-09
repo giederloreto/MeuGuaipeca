@@ -3,13 +3,17 @@ import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart'
 import 'package:meu_guaipeca/presentation/components/guaipeca_separate.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_form_field.dart';
 
+import '../../components/guaipeca_appbar.dart';
+
 class RegisterCnpjView extends StatelessWidget {
   const RegisterCnpjView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: const GuaipecaAppBar(
+          title: 'Cadastro de Associação', showBackIcon: true),
+      /* AppBar(
         title: const Center(
           child: Text(
             'Cadastro',
@@ -19,7 +23,7 @@ class RegisterCnpjView extends StatelessWidget {
                 fontWeight: FontWeight.bold),
           ),
         ),
-      ),
+      ), */
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Center(
@@ -55,7 +59,10 @@ class RegisterCnpjView extends StatelessWidget {
               const GuaipecaSeparate(
                 height: 20,
               ),
-              GuaipecaLargeButton(label: 'Concluir', onTap: () {  },)
+              GuaipecaLargeButton(
+                label: 'Concluir',
+                onTap: () {},
+              )
             ],
           ),
         ),

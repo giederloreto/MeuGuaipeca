@@ -26,7 +26,8 @@ class _RegisterCpfViewState extends State<RegisterCpfView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const GuaipecaAppBar(title: 'Fazer Cadastro', showBackIcon: false),
+      appBar: const GuaipecaAppBar(
+          title: 'Cadastro de usuário', showBackIcon: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(24.0),

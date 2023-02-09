@@ -35,14 +35,14 @@ class _GuaipecaTextFormFieldState extends State<GuaipecaTextFormField> {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        label: Text(
+        labelText: widget.label/* Text(
           widget.label,
           style: const TextStyle(
             fontFamily: 'Quicksand',
             fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
-        ),
+        ), */
       ),
     );
   }

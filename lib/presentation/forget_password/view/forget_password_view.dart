@@ -3,6 +3,8 @@ import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart'
 import 'package:meu_guaipeca/presentation/components/guaipeca_separate.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_form_field.dart';
 
+import '../../components/guaipeca_appbar.dart';
+
 class ForgetPasswordView extends StatefulWidget {
   ForgetPasswordView({Key? key}) : super(key: key);
 
@@ -14,17 +16,8 @@ class _ForgetPasswordViewState extends State<ForgetPasswordView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            'Recuperar minha conta',
-            style: const TextStyle(
-                fontFamily: 'Quicksand',
-                fontSize: 20,
-                fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
+      appBar: const GuaipecaAppBar(
+          title: 'Recuperação de senha', showBackIcon: true),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
