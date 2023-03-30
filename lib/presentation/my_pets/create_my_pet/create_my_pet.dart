@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:meu_guaipeca/data/my_pet/imy_pet_network.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_large_button.dart';
 import 'package:meu_guaipeca/presentation/components/guaipeca_text_default.dart';
+import 'package:meu_guaipeca/presentation/my_pets/create_my_pet/create_my_pet_view_model.dart';
 
 import '../../components/guaipeca_appbar.dart';
 import '../../components/guaipeca_text_form_field.dart';
@@ -13,6 +16,7 @@ class CreateMyPet extends StatefulWidget {
 }
 
 class _CreateMyPetState extends State<CreateMyPet> {
+  final _createMyPetViewModel = GetIt.I<CreateMyPetViewModel>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +51,7 @@ class _CreateMyPetState extends State<CreateMyPet> {
                   Padding(
                     padding: const EdgeInsets.only(top: 16),
                     child: GuaipecaTextFormField(
+                      controller: _createMyPetViewModel.nameController,
                       label: 'Nome',
                     ),
                   ),
@@ -54,7 +59,9 @@ class _CreateMyPetState extends State<CreateMyPet> {
                     padding: const EdgeInsets.only(top: 16, bottom: 16),
                     child: GuaipecaLargeButton(
                       label: 'Salvar',
-                      onTap: () {},
+                      onTap: () {
+                        _createMyPetViewModel.createMyPet();
+                      },
                     ),
                   ),
                 ],
